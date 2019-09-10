@@ -1,0 +1,16 @@
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\DAL.dll.config
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\DAL.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\DAL.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\BE.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\EntityFramework.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\BE.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\EntityFramework.xml
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.pdb

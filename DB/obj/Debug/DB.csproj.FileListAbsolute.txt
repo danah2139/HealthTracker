@@ -1,0 +1,9 @@
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\bin\Debug\BE.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\bin\Debug\BE.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\obj\Debug\DB.csprojAssemblyReference.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\obj\Debug\DB.csproj.CoreCompileInputs.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\obj\Debug\DB.csproj.CopyComplete
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\obj\Debug\DB.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\obj\Debug\DB.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\bin\Debug\DB.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DB\bin\Debug\DB.pdb

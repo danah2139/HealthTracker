@@ -1,0 +1,16 @@
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\BL.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\BL.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\BE.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\DAL.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\EntityFramework.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\BE.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\DAL.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\DAL.dll.config
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\EntityFramework.xml
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\obj\Debug\BL.csprojAssemblyReference.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\obj\Debug\BL.csproj.CoreCompileInputs.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\obj\Debug\BL.csproj.CopyComplete
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\obj\Debug\BL.dll
+C:\Users\tatal\Desktop\Window_Project_6670_3610\BL\obj\Debug\BL.pdb
