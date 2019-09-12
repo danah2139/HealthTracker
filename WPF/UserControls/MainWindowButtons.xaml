@@ -6,14 +6,68 @@
              xmlns:local="clr-namespace:WPF.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Button">
+        <Setter Property="BitmapEffect">
+            <Setter.Value>
+                <DropShadowBitmapEffect Color="Black" Direction="330" ShadowDepth="4"
+                                            Opacity="0.5"/>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="RadioButton">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type RadioButton}">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                        <ContentPresenter 
+                                HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="Control.IsMouseOver" Value="true">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <!--<TextBlock FontWeight="Bold" Text="{TemplateBinding Content}"/>-->
+                            <TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>
+                        </DataTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="true">
+                <Setter Property="ContentTemplate">
+                    <Setter.Value>
+                        <DataTemplate>
+                            <TextBlock FontWeight="Bold" Text="{TemplateBinding Content}"
+                                          />
+                            <!--<TextBlock TextDecorations="Underline" Text="{TemplateBinding Content}"/>-->
+                        </DataTemplate>
+                    </Setter.Value>
 
-
-
-    <Grid >
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    </UserControl.Resources>
+    <Grid Name="MainGrid">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="47*"/>
-            <ColumnDefinition Width="113*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <RadioButton Name="graphButton"  Command="{Binding GraphCommand}" Margin="0,0,-953,-392.4" Grid.ColumnSpan="2"/>
+        <RadioButton Name="enterMealsButton" Content="EnterMeals" Grid.Column="0"  Command="{Binding EnterMealsCommand}"/>
+        <RadioButton Name="profileButton" Content="Profile" Grid.Column="1" Command="{Binding ProfileCommand}"/>
+        <RadioButton Name="graphButton" Content="Graph" Grid.Column="2"  Command="{Binding GraphCommand}"/>
     </Grid>
 </UserControl>

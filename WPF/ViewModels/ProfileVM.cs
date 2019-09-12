@@ -9,7 +9,7 @@ using WPF.Models;
 
 namespace WPF.ViewModels
 {
-    class ProfileVM:ObservableCollection<User>
+    public class ProfileVM:ObservableCollection<User>
     {
         ProfileModel ProfileModel { get; set; }
         public ProfileVM(int id)

@@ -14,3 +14,6 @@ C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csproj.CoreCom
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.dll
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.pdb
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.InitialCreate.resources
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.csproj.GenerateResource.cache
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.InitialCreate1.resources

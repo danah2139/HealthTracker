@@ -12,6 +12,8 @@ namespace BE
     {
         public class Desc
         {
+
+            //  [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
             [Key]
             public string ndbno { get; set; }
             public string name { get; set; }
@@ -46,7 +48,7 @@ namespace BE
         }
 
         public class Source
-        {
+        {   [Key]
             public int id { get; set; }
             public string title { get; set; }
             public string authors { get; set; }
@@ -70,6 +72,7 @@ namespace BE
         public class Food
         {
             [Key]
+            [System.ComponentModel.DataAnnotations.Schema.DatabaseGenerated(System.ComponentModel.DataAnnotations.Schema.DatabaseGeneratedOption.Identity)]
             public Food2 food { get; set; }
             public string error { get; set; }
         }
@@ -81,26 +84,26 @@ namespace BE
             public int count { get; set; }
             public int notfound { get; set; }
             public double api { get; set; }
-            [Key]
-            public string key_id;
+            //public Desc desc;
+            //public string key_id;
             //public string key_id { get; set; }//i added
             //public Desc desc { get; set; }//i added
 
 
             //**************************************//
 
-            public RootObject()
-            {
-               setKeyValues(); 
-            }
+            //public RootObject()
+            //{
+            //   setKeyValues(); 
+            //}
 
-            public void setKeyValues()
-            {
-               if (foods != null)
-                {
-                    key_id = foods[0].food.desc.ndbno;
-                }
-            }
+            //public void setKeyValues()
+            //{
+            //   if (foods != null)
+            //    {
+            //        key_id = foods[0].food.desc.ndbno;
+            //    }
+            //}
         }
     }
 }

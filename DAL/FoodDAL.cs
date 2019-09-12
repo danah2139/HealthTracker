@@ -114,9 +114,9 @@ namespace DAL
 
 
                 ReportObject.RootObject rootObject = JsonConvert.DeserializeObject<ReportObject.RootObject>(NdbjsonString);
-                rootObject.setKeyValues();
+                //rootObject.setKeyValues();
          
-                UpdateReportDB(rootObject);
+        //        UpdateReportDB(rootObject);
                 
                 return rootObject;
             }
@@ -126,7 +126,7 @@ namespace DAL
                 {
                     var result =
                         (from curr in db.ReportFoodData
-                         where curr.key_id.Equals(name)
+                         where curr.foods[0].food.desc.name.Equals(name)
                          //lehashlim
                          select new TempData
                          {
@@ -139,7 +139,7 @@ namespace DAL
                     ReportObject.RootObject rootObject = result._root;
                    /*
                     rootObject.report = result._report;
-                    var _weather = (from curr in db.ReportFoodData
+                    var _food = (from curr in db.ReportFoodData
                                     where curr.key_id.Equals(city)
                                     //take care of the key
                                     select (
@@ -154,26 +154,27 @@ namespace DAL
             }
         }
 
-        private void UpdateReportDB(ReportObject.RootObject rootObject)
-        {
-            using (var db = new InfoFoodContext())
-            {
-                var exist =
-                    (from info in db.ReportFoodData
-                     where info.key_id.Equals(rootObject.key_id)
-                     select info).FirstOrDefault();
-                 if (exist != null)
-                {
-                    db.Entry(exist).CurrentValues.SetValues(rootObject);
-                }
-                else
-                {
-                    db.ReportFoodData.Add(rootObject);
-                }
-                db.SaveChanges();
+        //private void UpdateReportDB(ReportObject.Desc rootObject)
+        //{
+        //    using (var db = new InfoFoodContext())
+        //    {
+        //        var exist = db.ReportFoodData.SingleOrDefault(info => info.ndbno.Equals(rootObject.ndbno));
+                  
+        //          // (from info in db.ReportFoodData
+        //        //     where info.key_id.Equals(rootObject.key_id)
+        //         //    select info).FirstOrDefault();
+        //         if (exist != null)
+        //        {
+        //            db.Entry(exist).CurrentValues.SetValues(rootObject);
+        //        }
+        //        else
+        //        {
+        //            db.ReportFoodData.Add(rootObject);
+        //        }
+        //        db.SaveChanges();
             
-            }
-        }
+        //    }
+        //}
     }
 
 

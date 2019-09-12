@@ -4,9 +4,111 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:WPF.UserControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-            
+             mc:Ignorable="d" d:DesignWidth="800" Height="504">
+
+
+
+    <Grid Margin="0,0,10,-55.4">
+        <TabControl HorizontalAlignment="Left" Background="Transparent" Height="505" VerticalAlignment="Top" Width="289" Margin="0,0,0,-163.4" SelectionChanged="TabControl_SelectionChanged">
+            <TabItem Header="Add" FontFamily="Yu Gothic UI Semibold">
+                <Grid Height="320" Margin="0,0,-9.6,0">
+                    <Grid x:Name="Addgrid1" VerticalAlignment="Top" Margin="0,0,-15,-184.8" Height="auto" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+
+                        </Grid.RowDefinitions>
+
+                        <!--colomns -->
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="76.933"/>
+                            <ColumnDefinition Width="31.067"/>
+                            <ColumnDefinition Width="29.067"/>
+                            <ColumnDefinition Width="94.933"/>
+                        </Grid.ColumnDefinitions>
+
+
+                        <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,-26,0,0" HorizontalAlignment="Left" Grid.Column="0" Content="Name:" Height="26" Width="42" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="nameTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="0" Margin="3.4,-18,0,0" HorizontalAlignment="Left" Grid.Column="2" Height="18" Grid.ColumnSpan="2"/>
+                        <Label VerticalAlignment="Center" Margin="3,6,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content="*Id:" Grid.Row="1" Height="26" Width="42" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="idTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding ID, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6,0,9.6" Height="22" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="2"/>
+                        <Label VerticalAlignment="center" Grid.Row="2" Margin="0,4.4,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content=" Birth Date:" Height="26" Width="69" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <DatePicker x:Name="birthDayDatePicker" VerticalAlignment="Center" SelectedDate="{Binding DateOfBirth, Mode=TwoWay , NotifyOnValidationError=True, ValidatesOnExceptions=true}" Grid.Row="2" HorizontalAlignment="Left" Grid.Column="2" Margin="0.4,5.4,0,6.6" Height="24" Width="102" FontStyle="Italic" Grid.ColumnSpan="2" />
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Person Gender:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <ComboBox x:Name="genderPersonComboBox" Width=" 120" VerticalAlignment="Center" SelectedItem="{Binding Gender}" Grid.Row="3" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="2"/>
+                        <Label VerticalAlignment="Center" Margin="3,6,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content="Height:" Grid.Row="4" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="heightTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding Height, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6,0,8.6" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="4" Grid.ColumnSpan="2"/>
+                        <Label VerticalAlignment="Center" Margin="3,5.4,0,6.2" HorizontalAlignment="Left" Grid.Column="0" Content="weight:" Grid.Row="5" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="weightTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding  Weight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.4,0,8.2" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="2"/>
+                        <Label VerticalAlignment="Center" Margin="3,5.8,0,5.8" HorizontalAlignment="Left" Grid.Column="0" Content="Goal Weight:" Grid.Row="6" Height="26" Width="93" Background="{x:Null}" Foreground="white" FontFamily="Yu Gothic UI Semibold" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="goalWeightTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding GoalWeight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.8,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="6" Grid.ColumnSpan="2"/>
+
+
+                    </Grid>
+                    <Button Name="Add" Content="Add" HorizontalAlignment="Right"  Margin="0,345,11,-52" VerticalAlignment="Top" Width="84" Height="27" FontFamily="Yu Gothic UI Semibold" >
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=nameTextBox,Path=Text}" Value="">
+                                        <Setter Property="Button.IsEnabled" Value=" false"/>
+                                    </DataTrigger>
+                                    <DataTrigger Binding="{Binding ElementName=idTextBox,Path=Text}" Value=" ">
+                                        <Setter Property="Button.IsEnabled" Value=" false"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
+            </TabItem>
+
+            <TabItem Header="Update" FontFamily="Yu Gothic UI Semibold" Margin="-0.4,0,-1.6,1">
+                <Grid Height=" 370" Margin=" 3,3,0.4,0" VerticalAlignment="Top">
+                    <Grid x:Name="updategrid2" Margin="0,10,3,-50" Height="410" VerticalAlignment="Top">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width=" Auto"/>
+                            <ColumnDefinition Width=" Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height=" Auto"/>
+                            <RowDefinition Height=" Auto"/>
+                            <RowDefinition Height=" Auto"/>
+                            <RowDefinition Height=" Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" Foreground="White"/>
+                        <TextBox x:Name="nameTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="0,42.6,0,29.8" HorizontalAlignment="Left" Grid.Column="0" Content="Current Weight:" Height="26" Width="99" Foreground="white"/>
+                        <TextBox x:Name="weightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding Weight, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="10.2,51.6,-1.4,30.4" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,135.6,0,-60.8" HorizontalAlignment="Left" Grid.Column="0" Content="Hight:" Height="26" Width="99" Foreground="White"/>
+                        <TextBox x:Name="hightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding Height, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="7.2,141.6,0,-63.6" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,89.6,0,-18.8" HorizontalAlignment="Left" Grid.Column="0" Content="Goal Weight:" Height="26" Width="99" Foreground="white"/>
+                        <TextBox x:Name="goalWeightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding GoalWeight, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="7.2,97.6,0,-18" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
+
+                    </Grid>
+                    <Button Name="Update" Content=" Update " HorizontalAlignment="Left" Margin="177,323,0,0" VerticalAlignment="Top" Width=" 84" Height="27" >
+                        <Button.Style>
+                            <Style>
+                                <Style.Triggers>
+                                    <DataTrigger Binding="{Binding ElementName=nameTextBox1, Path=Text}"  Value="">
+                                        <Setter Property="Button.IsEnabled" Value="False"/>
+                                    </DataTrigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
     </Grid>
 </UserControl>

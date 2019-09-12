@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations;
+
 
 namespace BE
 {
@@ -13,6 +15,7 @@ namespace BE
             public int offset { get; set; }
             public string group { get; set; }
             public string name { get; set; }
+            [Key]
             public string ndbno { get; set; }
             public string ds { get; set; }
             public string manu { get; set; }

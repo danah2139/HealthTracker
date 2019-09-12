@@ -39,9 +39,10 @@ namespace WPF.UserControls
             valueList.Add(new KeyValuePair<string, int>("Project Manager", 40));
 
 
-
+ //           lineChart.ToolTip = true;
             //Setting data for line chart
             lineChart.DataContext = valueList;
+            
          }
         //private void LoadLineChartData()
         //{

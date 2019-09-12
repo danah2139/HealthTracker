@@ -18,6 +18,7 @@ namespace WPF.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangedEventHandler NamePropertyChanged;
+        public event PropertyChangedEventHandler IdPropertyChanged;
         private UserControl userControl;
         public UserControl UserControl
         {
@@ -28,8 +29,20 @@ namespace WPF.ViewModels
                     return;
                 userControl = value;
                 if (PropertyChanged != null)
+                {
                     PropertyChanged(this, new PropertyChangedEventArgs("UserControl"));
-
+                }
+            }
+        }
+        private int id;
+        public int Id
+        {
+            get { return id; }
+            set
+            {
+                id = value;
+                if (IdPropertyChanged != null)
+                    IdPropertyChanged(this, new PropertyChangedEventArgs("Id"));
             }
         }
 
@@ -50,11 +63,14 @@ namespace WPF.ViewModels
         public ProfileCommand ProfileCommand { set; get; }
         public string[] Names { set; get; }//pural
         private MainModel Model { set; get; }
+        //MainWindow MainWindow { get; set; }
 
         public MainWindowVM()
         {
             Model = new MainModel();
             Name = "beer";
+            //ID="888888"
+           // MainWindow = new MainWindow();
             MainWindowButtons = new MainWindowButtons();
             MealCommand = new EnterMealsCommand();
             GraphCommand = new GraphCommand();
@@ -64,15 +80,20 @@ namespace WPF.ViewModels
             ProfileCommand.ShowProfile += ProfileCommand_ShowProfile;
 
             GraphCommand.ShowGraph += GraphCommand_ShowGraph;
-            UserControl = new UserControls.EnterMeals("beer");
-            //MainWindowButtons..IsChecked = true;
+            
+            UserControl = new EnterMeals("beer");
+
+            // MainWindow.userbutton.IsEnabled = true;
+            MainWindowButtons.profileButton.IsChecked = true;
+
             NamePropertyChanged += MainWindowVM_NamePropertyChanged;
         }
 
         private void MainWindowVM_NamePropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (this.UserControl.GetType().Equals(typeof(EnterMeals)))
-                this.UserControl = new UserControls.EnterMeals(name);
+                this.UserControl = new EnterMeals(name);
+
 
             //we need to add one for user/ profile user control
 
@@ -80,12 +101,12 @@ namespace WPF.ViewModels
 
         private void GraphCommand_ShowGraph(object sender, EventArgs e)
         {
-            this.UserControl = new UserControls.Graph();
+            this.UserControl = new Graph();
         }
 
         private void MealCommand_ShowEnterMeals(object sender, EventArgs e)
         {
-            this.UserControl = new UserControls.EnterMeals(Name);
+            this.UserControl = new EnterMeals(Name);
         }
 
         private void UserControls_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
@@ -94,7 +115,7 @@ namespace WPF.ViewModels
 
         private void ProfileCommand_ShowProfile(object sender, EventArgs e)
         {
-            this.UserControl = new UserControls.Profile();
+            this.UserControl = new Profile(Id);
         }
     }
 }

@@ -19,6 +19,12 @@ namespace WPF.Models
         {
             return FoodBL.getFoodReportData(name);
         }
+
+        public string[] getListOfFoodDetails()
+        {
+            string[] details = { "Name","Fat", "Protein","Carbohydrate" };
+            return details;
+        }
         //we need to add lists/db for person
 
         //add list<> essientail food data public List<>

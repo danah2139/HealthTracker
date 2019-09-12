@@ -7,33 +7,24 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Name="MainGrid">
-        <DockPanel x:Name="headerPanel" HorizontalAlignment="Stretch" Height="48" LastChildFill="False" VerticalAlignment="Top" Width="794" Margin="0,0,-0.4,0" Background="DarkOrange">
-            <Label x:Name="dashboard"  Height="59" VerticalAlignment="Bottom" Width="793" Content="Dashboard" FontFamily="Haettenschweiler" FontSize="50"  HorizontalAlignment="Center" Margin="0,-11,0,0"/>
-        </DockPanel>
-        
-        <DockPanel x:Name="profilePanel" HorizontalAlignment="Left" Height="130" LastChildFill="False" Margin="483,87,0,0" VerticalAlignment="Top" Width="247" Background="#FF2FD04E"  >
-            
-            <Ellipse Height="79" DockPanel.Dock="top" Margin="73,10,85.4,0" RenderTransformOrigin="0.498,0.934" >
-                <Ellipse.Fill>
-                    <ImageBrush ImageSource="images/avatar.jpg" />
-                </Ellipse.Fill>
-            </Ellipse>
-            <Button Name="userbutton" RenderTransformOrigin="0.552,0.506"  Margin="483,87,63.6,203" Command="{Binding ProfileCommand}" Background="Transparent"/>
-        </DockPanel>
-        <DockPanel x:Name="graphPanel" HorizontalAlignment="Left" Height="136" LastChildFill="False" Margin="242,246,0,0" VerticalAlignment="Top" Width="324" RenderTransformOrigin="0.5,0.5" Background="#FFDA1313">
-            <DockPanel.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="0.065"/>
-                    <TranslateTransform/>
-                </TransformGroup>
-            </DockPanel.RenderTransform>
-        </DockPanel>
-        <DockPanel x:Name="entermealsPanel" HorizontalAlignment="Left" Height="122" LastChildFill="False" Margin="44,87,0,0" VerticalAlignment="Top" Width="346" Background="#FF54F3CE"  />
-        <Label x:Name="userName" Content="Dana Cohen (Admin)" HorizontalAlignment="Left" Margin="547,180,0,0" VerticalAlignment="Top" Width="133" Foreground="#FFFCF6F6" FontFamily="Yu Gothic UI Semibold" FontWeight="Bold" Height="29" />
-
-
+        <Grid.Background>
+            <ImageBrush ImageSource="Images\Food2.jpg" Stretch="Fill"/>
+        </Grid.Background>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="8*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Rectangle Grid.Column="0" Grid.Row="0" Stroke="Transparent" StrokeThickness="0" Grid.ColumnSpan="2" Margin="0,0,793.6,0.4">
+            <Rectangle.Fill>
+                <SolidColorBrush Color="Black" Opacity="0.2"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <UserControl Name="ButtonsUserControl" Grid.Row="0" Grid.Column="1" Content="{Binding MainWindowButtons}" Background="Black" Opacity="0.2" BorderThickness="0" Margin="10,0,-0.4,0.4"/>
+        <UserControl Padding="0,10,0,0"  Name="userControl" Content="{Binding UserControl}" BorderThickness="0" Margin="0,46,9.6,0" Grid.RowSpan="2" Grid.Column="1"/>
 
     </Grid>
 </Window>
