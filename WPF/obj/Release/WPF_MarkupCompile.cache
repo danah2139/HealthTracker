@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dana\Source\Repos\HealthTracker\WPF\obj\Debug\
+C:\Users\dana\Source\Repos\HealthTracker\WPF\obj\Release\
 WPF
 none
 false
-DEBUG;TRACE
+TRACE
 C:\Users\dana\Source\Repos\HealthTracker\WPF\App.xaml
 5-1516346697
 
 202087276495
-311334263325
+31-2074362237
 MainWindow.xaml;UserControls\EnterMeals.xaml;UserControls\Graph.xaml;UserControls\MainWindowButtons.xaml;UserControls\Profile.xaml;
 
-False
+True
 

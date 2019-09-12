@@ -7,3 +7,12 @@ C:\Users\tatal\Desktop\Window_Project_6670_3610\BE\obj\Debug\BE.pdb
 C:\Users\tatal\Desktop\Window_Project_6670_3610\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
 C:\Users\tatal\Desktop\Window_Project_6670_3610\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
 C:\Users\tatal\Desktop\Window_Project_6670_3610\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\dana\Source\Repos\HealthTracker\BE\bin\Debug\BE.dll
+C:\Users\dana\Source\Repos\HealthTracker\BE\bin\Debug\BE.pdb
+C:\Users\dana\Source\Repos\HealthTracker\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
+C:\Users\dana\Source\Repos\HealthTracker\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
+C:\Users\dana\Source\Repos\HealthTracker\BE\obj\Debug\BE.csprojAssemblyReference.cache
+C:\Users\dana\Source\Repos\HealthTracker\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\dana\Source\Repos\HealthTracker\BE\obj\Debug\BE.csproj.CopyComplete
+C:\Users\dana\Source\Repos\HealthTracker\BE\obj\Debug\BE.dll
+C:\Users\dana\Source\Repos\HealthTracker\BE\obj\Debug\BE.pdb

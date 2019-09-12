@@ -101,7 +101,7 @@ namespace WPF.ViewModels
 
         private void GraphCommand_ShowGraph(object sender, EventArgs e)
         {
-            this.UserControl = new Graph();
+            this.UserControl = new Graph(Id);
         }
 
         private void MealCommand_ShowEnterMeals(object sender, EventArgs e)
