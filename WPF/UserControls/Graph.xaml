@@ -41,7 +41,7 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
-        <charting:Chart Name="tempChart" DataContext="{Binding NextHoursInfo}"  Foreground="WhiteSmoke" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+        <charting:Chart Name="tempChart" DataContext="{Binding WeeksWeightInfo}"  Foreground="WhiteSmoke" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
             <charting:Chart.Axes>
                 <charting:LinearAxis Orientation="Y" Visibility="Hidden" ShowGridLines="False" Maximum="46" Minimum="0"/>
                 <charting:CategoryAxis Orientation="X" MajorTickMarkStyle="{StaticResource PerformanceChartMajorTickMarkStyle}"/>
