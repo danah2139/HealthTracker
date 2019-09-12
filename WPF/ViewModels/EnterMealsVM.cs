@@ -7,7 +7,7 @@ using BE;
 using WPF.Models;
 using BL;
 using System.Collections.ObjectModel;
-
+using WPF.UserControls;
 namespace WPF.ViewModels
 {
     public class EnterMealsVM:ObservableCollection<ReportObject>
@@ -16,6 +16,7 @@ namespace WPF.ViewModels
         //and we r entering meals
     {
         EnterMealsModel EnterMealsModel { get; set; }
+        EnterMeals EnterMeals { get; set; }
         //public string Sr { get; set; }
        public EnterMealsVM(string name)
         {
@@ -23,5 +24,6 @@ namespace WPF.ViewModels
             EnterMealsModel = new EnterMealsModel(name);
 
         }
+
     }
 }

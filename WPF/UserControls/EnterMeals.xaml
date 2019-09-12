@@ -6,7 +6,125 @@
              xmlns:local="clr-namespace:WPF.UserControls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-          
+    <Grid Margin="-131,-66,-162,-119.4">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+
+        </Grid.ColumnDefinitions>
+        <Grid Margin="108,50,296.8,170" Background="White">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="4*" />
+                <ColumnDefinition Width="145*"/>
+                <ColumnDefinition Width="149*" />
+                <ColumnDefinition Width="149*" />
+                <ColumnDefinition Width="149*" />
+                <ColumnDefinition Width="148*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+
+                <RowDefinition Height="0*"/>
+                <RowDefinition Height="41*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="21*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="20*"/>
+                <RowDefinition Height="21*"/>
+            </Grid.RowDefinitions>
+            <Label Content="Food Name" HorizontalAlignment="Left" Margin="19.8,6,0,0" VerticalAlignment="Top" Width="97" Grid.Column="2" FontFamily="Segoe UI Semibold" FontSize="14" Height="26" Grid.Row="1"/>
+            <Label Content="Fat" Grid.Column="3" HorizontalAlignment="Left" Margin="27.4,4,0,0" VerticalAlignment="Top" Width="79" Height="26" FontSize="14" FontFamily="Segoe UI Semibold" Grid.Row="1"/>
+            <Label Content="Protein" Grid.Column="4" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Height="26" Width="78" FontFamily="Segoe UI Semibold" FontSize="14" Grid.Row="1"/>
+            <Label Content="Carbohydrate" Grid.Column="5" HorizontalAlignment="Left" Margin="9.6,2,0,0" VerticalAlignment="Top" Width="114" FontFamily="Segoe UI Semibold" FontSize="15" Height="30" Grid.Row="1"/>
+            <Label Content="Breakfast" HorizontalAlignment="Left" Margin="10,5,0,0" VerticalAlignment="Top" Width="112" FontSize="15" FontFamily="Segoe UI Semibold" Height="32" Grid.Column="1" Grid.Row="1"/>
+            <Label Content=" Lunch" HorizontalAlignment="Left" Margin="8,16.4,0,0" Grid.Row="7" VerticalAlignment="Top" Height="33" Grid.RowSpan="3" Width="112" FontSize="15" FontFamily="Segoe UI Semibold" Grid.Column="1"/>
+            <Label Content="Dinner" HorizontalAlignment="Left" Margin="8,13.4,0,0" Grid.Row="14" VerticalAlignment="Top" Height="34" Grid.RowSpan="3" Width="127" FontFamily="Segoe UI Semibold" FontSize="15" Grid.Column="1"/>
+            <Button Name="addMeal1" Content="add meal" HorizontalAlignment="Left" Margin="8,0.4,0,0" Grid.Row="7" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19"/>
+            <Button Name="addMeal2" Content="add meal" HorizontalAlignment="Left" Height="22" Margin="8,18.4,0,0" Grid.Row="13" Grid.RowSpan="3" VerticalAlignment="Top" Width="75" Grid.Column="1"/>
+            <Button Name="addMeal3" Content="add meal" HorizontalAlignment="Left" Margin="6,18.8,0,0" Grid.Row="20" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Grid.RowSpan="2"/>
+
+            <TextBox x:Name="breakfastFoodName1" Grid.Column="2" HorizontalAlignment="Left" Height="16" Margin="9.8,3.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="129"/>
+            <TextBox x:Name="breakfastFoodName2" Grid.Column="2" HorizontalAlignment="Left" Height="16" Margin="9.8,0.2,0,0" Grid.Row="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="129" />
+            <TextBox x:Name="breakfastFoodName3" Grid.Column="2" HorizontalAlignment="Left" Height="16" Margin="9.8,1.4,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="129" />
+            <TextBox x:Name="breakfastFoodName4" Grid.Column="2" HorizontalAlignment="Left" Height="16" Margin="9.8,18.4,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="129"  Grid.RowSpan="2"/>
+            <TextBox x:Name="breakfastFoodName5" Grid.Column="2" HorizontalAlignment="Left" Height="20" Margin="9.8,19.4,0,0" Grid.Row="5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="129"  Grid.RowSpan="2"/>
+            <TextBox x:Name="brakfastFat1" Grid.Column="3" HorizontalAlignment="Left" Height="18" Margin="16.4,0.2,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="brakfastFat2" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,18.2,0,0" Grid.Row="2" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="brakfastFat3" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,1.4,0,0" Grid.Row="4" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="brakfastFat4" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,0.4,0,0" Grid.Row="5" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="brakfastFat5" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,19.4,0,0" Grid.Row="5" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="breakfastProtein1" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="20,1.8,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="breakfastProtein2" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="20,18.8,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116" Grid.RowSpan="2"/>
+            <TextBox x:Name="breakfastProtein3" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="20,0.6,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="breakfastProtein4" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="20,18.6,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116" Grid.RowSpan="2"/>
+            <TextBox x:Name="breakfastProtein5" Grid.Column="4" HorizontalAlignment="Left" Height="16" Margin="20,1.2,0,0" Grid.Row="6" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="breakfastCarbo1" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="12.6,39,0,0" Grid.Row="1" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123" Grid.RowSpan="2"/>
+            <TextBox x:Name="breakfastCarbo2" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="12.6,18.8,0,0" Grid.Row="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123" Grid.RowSpan="2"/>
+            <TextBox x:Name="breakfastCarbo3" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="12.6,0.6,0,0" Grid.Row="4" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="breakfastCarbo4" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="12.6,2.4,0,0" Grid.Row="5" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="breakfastCarbo5" Grid.Column="5" HorizontalAlignment="Left" Height="16" Margin="12.6,1.2,0,0" Grid.Row="6" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+
+            <TextBox x:Name="lunchFoodName1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,19.4,0,0" Grid.Row="8" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="lunchFoodName2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,0.4,0,0" Grid.Row="10" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="lunchFoodName3" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,19.4,0,0" Grid.Row="10" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="lunchFoodName4" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,19.4,0,0" Grid.Row="11" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="lunchFoodName5" Grid.Column="2" HorizontalAlignment="Left" Height="17" Margin="9.8,3.4,0,0" Grid.Row="13" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"  />
+            <TextBox x:Name="lunchFat1" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,0.4,0,0" Grid.Row="9" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lunchFat2" Grid.Column="3" HorizontalAlignment="Left" Height="20" Margin="16.4,0.4,0,0" Grid.Row="10" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lunchFat3" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,0.4,0,0" Grid.Row="11" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lunchFat4" Grid.Column="3" HorizontalAlignment="Left" Height="20" Margin="16.4,0.4,0,0" Grid.Row="12" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lunchFat5" Grid.Column="3" HorizontalAlignment="Left" Height="23" Margin="16.4,0.4,0,0" Grid.Row="13" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="lunchProtein1" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="20,0.6,0,0" Grid.Row="9" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="lunchProtein2" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="20,0.4,0,0" Grid.Row="10" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="lunchProtein3" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="20,0.6,0,0" Grid.Row="11" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="lunchProtein4" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="20,1.4,0,0" Grid.Row="12" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="lunchProtein5" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="20,1.2,0,0" Grid.Row="13" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="116"/>
+            <TextBox x:Name="lunchCarbo1" Grid.Column="5" HorizontalAlignment="Left" Height="20" Margin="12.6,18.8,0,0" Grid.Row="8" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="lunchCarbo2" Grid.Column="5" HorizontalAlignment="Left" Height="20" Margin="12.6,18.6,0,0" Grid.Row="9" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="lunchCarbo3" Grid.Column="5" HorizontalAlignment="Left" Height="20" Margin="12.6,15.4,0,0" Grid.Row="10" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="lunchCarbo4" Grid.Column="5" HorizontalAlignment="Left" Height="20" Margin="12.6,17.8,0,0" Grid.Row="11" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+            <TextBox x:Name="lunchCarbo5" Grid.Column="5" HorizontalAlignment="Left" Height="20" Margin="12.6,18.6,0,0" Grid.Row="12" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="123"/>
+
+            <TextBox x:Name="dinnerFoodName1" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,0.4,0,0" Grid.Row="16" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFoodName2" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,19.4,0,0" Grid.Row="16" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFoodName3" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,18.4,0,0" Grid.Row="17" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFoodName4" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,18.4,0,0" Grid.Row="18" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFoodName5" Grid.Column="2" HorizontalAlignment="Left" Height="23" Margin="9.8,0.4,0,-2.6" Grid.Row="20" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFat1" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="16.4,0.6,0,0" Grid.Row="16" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFat2" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="16.4,0.4,0,0" Grid.Row="17" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFat3" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="16.4,0.2,0,0" Grid.Row="18" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFat4" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="16.4,3,0,0" Grid.Row="19" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerFat5" Grid.Column="3" HorizontalAlignment="Left" Height="19" Margin="16.4,0.8,0,0" Grid.Row="20" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerProtien1" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="16,0.6,0,0" Grid.Row="16" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerProtien2" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="16,0.4,0,0" Grid.Row="17" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerProtien3" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="16,0.2,0,0" Grid.Row="18" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerProtien4" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="16,0,0,0" Grid.Row="19" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerProtien5" Grid.Column="4" HorizontalAlignment="Left" Height="19" Margin="16,0.8,0,0" Grid.Row="20" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" Grid.RowSpan="2"/>
+            <TextBox x:Name="dinnerCarbo1" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15.6,0.8,0,0" Grid.Row="16" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerCarbo2" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15.6,18.8,0,0" Grid.Row="16" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerCarbo3" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15.6,0.2,0,0" Grid.Row="18" Grid.RowSpan="2" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerCarbo4" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15.6,18.2,0,0" Grid.Row="18" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="dinnerCarbo5" Grid.Column="5" HorizontalAlignment="Left" Height="23" Margin="15.6,19,0,0" Grid.Row="19" Grid.RowSpan="3" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+            <Button x:Name="addMeal1_Copy" Content="add meal" HorizontalAlignment="Left" Margin="10,1.6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="75" Grid.Column="1" Height="19" Grid.RowSpan="2"/>
+
+
+
+
+
+
+        </Grid>
     </Grid>
 </UserControl>

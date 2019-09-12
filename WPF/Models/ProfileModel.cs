@@ -22,6 +22,10 @@ namespace WPF.Models
             return FoodBL.getUserDataById(id);
 
         }
+        public void AddUser(User user)
+        {
+            FoodBL.addUser(user);
+        }
 
     }
 }

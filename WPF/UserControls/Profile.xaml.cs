@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF.ViewModels;
+using BE;
 namespace WPF.UserControls
 {
     /// <summary>
@@ -33,6 +34,10 @@ namespace WPF.UserControls
         {
 
         }
-        
+
+        private void Add_Click(object sender, RoutedEventArgs e)
+        {
+            ProfileVM.Users.Add(new User { });
+        }
     }
 }

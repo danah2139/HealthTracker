@@ -22,5 +22,10 @@ namespace BL
             
         }
 
+        public void addUser(User user)
+        {
+            dal.addUser(user);
+        }
+
     }
 }
