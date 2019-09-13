@@ -15,7 +15,7 @@ namespace WPF.ViewModels
     public class ProfileVM
     {
         public Profile Profile { get; set; }
-        ProfileModel ProfileModel { get; set; }
+        public ProfileModel ProfileModel { get; set; }
         public ICommand AddProfile { get; set; }
 
        // public ObservableCollection<User> Users { get; set; }
