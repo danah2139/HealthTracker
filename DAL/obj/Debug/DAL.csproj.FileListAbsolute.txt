@@ -36,8 +36,11 @@ C:\Users\dana\Source\Repos\HealthTracker\DAL\obj\Debug\DAL.csproj.CoreCompileInp
 C:\Users\dana\Source\Repos\HealthTracker\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\dana\Source\Repos\HealthTracker\DAL\obj\Debug\DAL.dll
 C:\Users\dana\Source\Repos\HealthTracker\DAL\obj\Debug\DAL.pdb
+<<<<<<< HEAD
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.Migration.resources
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.Migration1.resources
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.newMigratin.resources
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.newMigration1.resources
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.newMigration2.resources
+=======
+>>>>>>> d87533e83289c24f980b434e11f395558c41b824
