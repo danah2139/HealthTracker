@@ -7,6 +7,8 @@ using System.Collections.ObjectModel;
 using BE;
 using WPF.UserControls;
 using WPF.Models;
+using System.Windows.Input;
+using WPF.Commands;
 
 namespace WPF.ViewModels
 {
@@ -14,13 +16,20 @@ namespace WPF.ViewModels
     {
         public Profile Profile { get; set; }
         ProfileModel ProfileModel { get; set; }
-        public ObservableCollection<User> Users { get; set; }
-        public ProfileVM(int id)
+        public ICommand AddProfile { get; set; }
+
+       // public ObservableCollection<User> Users { get; set; }
+        public ProfileVM()
         {
             ProfileModel = new ProfileModel();
-            Users = new ObservableCollection<User>();
+            AddProfile = new AddProfileCommand(this);
+            //Users = new ObservableCollection<User>();
+            
         }
 
-        
+        internal void AddNewProfile()
+        {
+            ProfileModel.AddUser();
+        }
     }
 }

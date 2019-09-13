@@ -89,6 +89,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Commands\AddProfileCommand.cs" />
     <Compile Include="UserControls\EnterMeals.xaml.cs">
       <DependentUpon>EnterMeals.xaml</DependentUpon>
     </Compile>

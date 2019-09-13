@@ -23,7 +23,7 @@ namespace DAL
         }   
         public class InfoFoodContext: DbContext
         {
-            public DbSet<ReportObject.RootObject> ReportFoodData { get; set;}
+           // public DbSet<ReportObject.RootObject> ReportFoodData { get; set;}
             public DbSet<User> Users { get; set;}
          
         }
@@ -122,35 +122,38 @@ namespace DAL
             }
             catch(WebException)
             {
-                using (var db = new InfoFoodContext())
-                {
-                    var result =
-                        (from curr in db.ReportFoodData
-                         where curr.foods[0].food.desc.name.Equals(name)
-                         //lehashlim
-                         select new TempData
-                         {
-                             _root = curr,
-                             //_food = curr.foods[0].food.desc.ndbno,
-                            
-                             
-                         }).FirstOrDefault();
+                //using (var db = new InfoFoodContext())
+                //{
+                //    var result =
+                //        (from curr in db.ReportFoodData
+                //         where curr.foods[0].food.desc.name.Equals(name)
+                //         //lehashlim
+                //         select new TempData
+                //         {
+                //             _root = curr,
+                //             //_food = curr.foods[0].food.desc.ndbno,
 
-                    ReportObject.RootObject rootObject = result._root;
-                   /*
-                    rootObject.report = result._report;
-                    var _food = (from curr in db.ReportFoodData
-                                    where curr.key_id.Equals(city)
-                                    //take care of the key
-                                    select (
-                                    from i in curr.list
-                                    select i.weather
-                                    )).FirstOrDefault();
-                    rootObject.list[0].weather = _weather.ElementAt(0);
-                    */
-                    return rootObject;
 
-                }
+                //         }).FirstOrDefault();
+
+                //    ReportObject.RootObject rootObject = result._root;
+                /*
+                 rootObject.report = result._report;
+                 var _food = (from curr in db.ReportFoodData
+                                 where curr.key_id.Equals(city)
+                                 //take care of the key
+                                 select (
+                                 from i in curr.list
+                                 select i.weather
+                                 )).FirstOrDefault();
+                 rootObject.list[0].weather = _weather.ElementAt(0);
+                 */
+                //return rootObject;
+
+
+                // }
+                throw new WebException("404");
+                return null;
             }
         }
 

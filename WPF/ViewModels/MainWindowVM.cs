@@ -84,7 +84,7 @@ namespace WPF.ViewModels
             UserControl = new EnterMeals("beer");
 
             // MainWindow.userbutton.IsEnabled = true;
-            MainWindowButtons.profileButton.IsChecked = true;
+           // MainWindowButtons.profileButton.IsChecked = true;
 
             NamePropertyChanged += MainWindowVM_NamePropertyChanged;
         }
@@ -101,7 +101,7 @@ namespace WPF.ViewModels
 
         private void GraphCommand_ShowGraph(object sender, EventArgs e)
         {
-            this.UserControl = new Graph();
+            this.UserControl = new Graph(Id);
         }
 
         private void MealCommand_ShowEnterMeals(object sender, EventArgs e)
@@ -115,7 +115,7 @@ namespace WPF.ViewModels
 
         private void ProfileCommand_ShowProfile(object sender, EventArgs e)
         {
-            this.UserControl = new Profile(Id);
+            this.UserControl = new Profile();
         }
     }
 }

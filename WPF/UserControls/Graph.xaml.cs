@@ -13,6 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.ViewModels;
+
 
 
 namespace WPF.UserControls
@@ -22,28 +24,32 @@ namespace WPF.UserControls
     /// </summary>
     public partial class Graph : UserControl
     {
-        public Graph()
+        public GraphVM GraphVM { get; set; }
+
+        public Graph(int id)
         {
             InitializeComponent();
-             showColumnChart();
-              //LoadLineChartData();
+            GraphVM = new GraphVM(id);
+            this.DataContext = GraphVM;
+            //showColumnChart();
+            //LoadLineChartData();
         }
 
-        private void showColumnChart()
-        {
-            List<KeyValuePair<string, int>> valueList = new List<KeyValuePair<string, int>>();
-            valueList.Add(new KeyValuePair<string, int>("Today", 10));
-            valueList.Add(new KeyValuePair<string, int>("Misc", 20));
-            valueList.Add(new KeyValuePair<string, int>("Tester", 50));
-            valueList.Add(new KeyValuePair<string, int>("QA", 30));
-            valueList.Add(new KeyValuePair<string, int>("Project Manager", 40));
+ //       private void showColumnChart()
+ //       {
+ //           List<KeyValuePair<string, int>> valueList = new List<KeyValuePair<string, int>>();
+ //           valueList.Add(new KeyValuePair<string, int>("Today", 10));
+ //           valueList.Add(new KeyValuePair<string, int>("Misc", 20));
+ //           valueList.Add(new KeyValuePair<string, int>("Tester", 50));
+ //           valueList.Add(new KeyValuePair<string, int>("QA", 30));
+ //           valueList.Add(new KeyValuePair<string, int>("Project Manager", 40));
 
 
- //           lineChart.ToolTip = true;
-            //Setting data for line chart
-            lineChart.DataContext = valueList;
+ ////           lineChart.ToolTip = true;
+ //           //Setting data for line chart
+ //           lineChart.DataContext = valueList;
             
-         }
+ //        }
         //private void LoadLineChartData()
         //{
         //    ((LineSeries)myChart.Series[0]).ItemsSource =

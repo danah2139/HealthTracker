@@ -66,8 +66,8 @@
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <RadioButton Name="enterMealsButton" Content="EnterMeals" Grid.Column="0"  Command="{Binding EnterMealsCommand}"/>
-        <RadioButton Name="profileButton" Content="Profile" Grid.Column="1" Command="{Binding ProfileCommand}"/>
+        <RadioButton Name="enttermealsButton" Content="EnterMeals" Grid.Column="0" Command="{Binding EnterMealsCommand}"/>
+        <RadioButton Name="ProfileButton" Content="Profile" Grid.Column="1"  Command="{Binding ProfileCommand}"/>
         <RadioButton Name="graphButton" Content="Graph" Grid.Column="2"  Command="{Binding GraphCommand}"/>
     </Grid>
 </UserControl>
