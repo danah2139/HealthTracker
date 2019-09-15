@@ -72,13 +72,13 @@
     <Compile Include="Migrations\201909121929543_newMigratin.Designer.cs">
       <DependentUpon>201909121929543_newMigratin.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909121937113_newMigration1.cs" />
-    <Compile Include="Migrations\201909121937113_newMigration1.Designer.cs">
-      <DependentUpon>201909121937113_newMigration1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\201909121943430_newMigration2.cs" />
     <Compile Include="Migrations\201909121943430_newMigration2.Designer.cs">
       <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909142033376_hh.cs" />
+    <Compile Include="Migrations\201909142033376_hh.Designer.cs">
+      <DependentUpon>201909142033376_hh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -109,11 +109,11 @@
     <EmbeddedResource Include="Migrations\201909121929543_newMigratin.resx">
       <DependentUpon>201909121929543_newMigratin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121937113_newMigration1.resx">
-      <DependentUpon>201909121937113_newMigration1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909121943430_newMigration2.resx">
       <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909142033376_hh.resx">
+      <DependentUpon>201909142033376_hh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

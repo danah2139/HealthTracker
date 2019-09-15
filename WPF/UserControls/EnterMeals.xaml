@@ -7,7 +7,7 @@
              xmlns:BE="clr-namespace:BE;assembly=BE" x:Class="WPF.UserControls.EnterMeals"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-<<<<<<< HEAD
+
     <Grid Margin="-131,-66,-162,-119.4">
         <Grid.ColumnDefinitions>
             <ColumnDefinition />
@@ -129,10 +129,8 @@
 
         </Grid>
     </Grid>
-=======
-    <UserControl.DataContext>
-        <BE:ReportObject/>
-    </UserControl.DataContext>
-    <Grid/>
->>>>>>> d87533e83289c24f980b434e11f395558c41b824
+
+   
+   
+
 </UserControl>

@@ -44,3 +44,4 @@ C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.new
 C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.newMigration2.resources
 =======
 >>>>>>> d87533e83289c24f980b434e11f395558c41b824
+C:\Users\tatal\Desktop\Window_Project_6670_3610\DAL\obj\Debug\DAL.Migrations.hh.resources
