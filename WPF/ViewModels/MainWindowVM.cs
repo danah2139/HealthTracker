@@ -18,7 +18,7 @@ namespace WPF.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangedEventHandler NamePropertyChanged;
-        public event PropertyChangedEventHandler IdPropertyChanged;
+        //public event PropertyChangedEventHandler IdPropertyChanged;
         private UserControl userControl;
         public UserControl UserControl
         {
@@ -32,35 +32,37 @@ namespace WPF.ViewModels
                 {
                     PropertyChanged(this, new PropertyChangedEventArgs("UserControl"));
                 }
+                //userControl = value;
             }
         }
-        private int id;
-        public int Id
-        {
-            get { return id; }
-            set
-            {
-                id = value;
-                if (IdPropertyChanged != null)
-                    IdPropertyChanged(this, new PropertyChangedEventArgs("Id"));
-            }
-        }
+        //private int id;
+        //public int Id
+        //{
+        //    get { return id; }
+        //    set
+        //    {
+        //        id = value;
+        //        if (IdPropertyChanged != null)
+        //            IdPropertyChanged(this, new PropertyChangedEventArgs("Id"));
+        //    }
+        //}
 
-        private string name;
-        public string Name
-        {
-            get { return name; }
-            set
-            {
-                name = value;
-                if (NamePropertyChanged != null)
-                    NamePropertyChanged(this, new PropertyChangedEventArgs("Name"));
-            }
-        }
+        //private string name;
+        //public string Name
+        //{
+        //    get { return name; }
+        //    set
+        //    {
+        //        name = value;
+        //        if (NamePropertyChanged != null)
+        //            NamePropertyChanged(this, new PropertyChangedEventArgs("Name"));
+        //    }
+        //}
         public MainWindowButtons MainWindowButtons { set; get; }
-        public EnterMealsCommand MealCommand { set; get; }
+        public LogInCommand LogInCommand { set; get; }
         public GraphCommand GraphCommand { set; get; }
         public ProfileCommand ProfileCommand { set; get; }
+        public EnterMealsCommand EnterMealsCommand { set; get; }
         public string[] Names { set; get; }//pural
         private MainModel Model { set; get; }
         //MainWindow MainWindow { get; set; }
@@ -68,52 +70,86 @@ namespace WPF.ViewModels
         public MainWindowVM()
         {
             Model = new MainModel();
-            Name = "beer";
+            //Name = "beer";
             //ID="888888"
-           // MainWindow = new MainWindow();
+            // MainWindow = new MainWindow();
             MainWindowButtons = new MainWindowButtons();
-            MealCommand = new EnterMealsCommand();
+            LogInCommand = new LogInCommand();
             GraphCommand = new GraphCommand();
+            EnterMealsCommand = new EnterMealsCommand();
             ProfileCommand = new ProfileCommand();
             //Cities = Model.getListOfCities();
-            MealCommand.ShowEnterMeals += MealCommand_ShowEnterMeals;
+            LogInCommand.ShowLogIn += LogInCommand_ShowlogIn;
             ProfileCommand.ShowProfile += ProfileCommand_ShowProfile;
-
+            EnterMealsCommand.ShowEnterMeals += MealCommand_ShowEnterMeals;
             GraphCommand.ShowGraph += GraphCommand_ShowGraph;
-            
-            UserControl = new EnterMeals("beer");
+            //MainWindowButtons.ProfileButton.IsChecked = true;
+
+
+            UserControl = new LogIn();
+
 
             // MainWindow.userbutton.IsEnabled = true;
-           // MainWindowButtons.profileButton.IsChecked = true;
+            //MainWindowButtons.profileButton.IsChecked = true;
 
             NamePropertyChanged += MainWindowVM_NamePropertyChanged;
         }
 
         private void MainWindowVM_NamePropertyChanged(object sender, PropertyChangedEventArgs e)
         {
+            if (this.UserControl.GetType().Equals(typeof(LogIn)))
+            { this.UserControl = new LogIn(); }
+
+            if (this.UserControl.GetType().Equals(typeof(Profile)))
+            { this.UserControl = new UserControls.Profile(); }
+
+            if (this.UserControl.GetType().Equals(typeof(Graph)))
+            { this.UserControl = new UserControls.Graph(); }
+
             if (this.UserControl.GetType().Equals(typeof(EnterMeals)))
-                this.UserControl = new EnterMeals(name);
+            { this.UserControl = new UserControls.EnterMeals(); }
 
 
             //we need to add one for user/ profile user control
 
         }
-
-        private void GraphCommand_ShowGraph(object sender, EventArgs e)
+        internal void LogInCommand_ShowlogIn(object sender, EventArgs e)
         {
-            this.UserControl = new Graph(Id);
+            this.UserControl = new LogIn();
+        }
+        //internal void LogInCommand_ShowlogIn()
+        //{
+        //    this.UserControl = new LogIn();
+        //}
+        internal void GraphCommand_ShowGraph(object sender, EventArgs e)
+        {
+            this.UserControl = new Graph();
         }
 
-        private void MealCommand_ShowEnterMeals(object sender, EventArgs e)
+        //internal void GraphCommand_ShowGraph()
+        //{
+        //    this.UserControl = new Graph();
+        //}
+
+        //internal void MealCommand_ShowEnterMeals()
+        //{
+        //    this.UserControl = new EnterMeals();
+        //}
+        internal void MealCommand_ShowEnterMeals(object sender, EventArgs e)
         {
-            this.UserControl = new EnterMeals(Name);
+            this.UserControl = new EnterMeals();
         }
 
         private void UserControls_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
         }
 
-        private void ProfileCommand_ShowProfile(object sender, EventArgs e)
+        //internal void ProfileCommand_ShowProfile()
+        //{
+        //    this.UserControl = new Profile();
+        //}
+
+        internal void ProfileCommand_ShowProfile(object sender, EventArgs e)
         {
             this.UserControl = new Profile();
         }

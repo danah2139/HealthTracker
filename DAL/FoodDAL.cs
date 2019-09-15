@@ -30,7 +30,7 @@ namespace DAL
 
         public FoodDAL()
         {
-            getFoodDataByName("beer");
+            //getFoodDataByName("beer");
             
         }
 
@@ -39,7 +39,6 @@ namespace DAL
         {
             using (var db = new InfoFoodContext())
             {
-
                 db.Users.Add(user); // adds the user to the DbSet in memory
                 db.SaveChanges(); // commits the changes to the database
             }
@@ -59,6 +58,10 @@ namespace DAL
             using (var db = new InfoFoodContext())
             {
                 var user = db.Users.FirstOrDefault(a => a.ID == id);
+                if (user == null)
+                {
+                    user = new User();
+                }
                 return user;
 
             }
@@ -115,12 +118,12 @@ namespace DAL
 
                 ReportObject.RootObject rootObject = JsonConvert.DeserializeObject<ReportObject.RootObject>(NdbjsonString);
                 //rootObject.setKeyValues();
-         
-        //        UpdateReportDB(rootObject);
-                
+
+                //        UpdateReportDB(rootObject);
+
                 return rootObject;
             }
-            catch(WebException)
+            catch (WebException e)
             {
                 //using (var db = new InfoFoodContext())
                 //{
@@ -152,7 +155,7 @@ namespace DAL
 
 
                 // }
-                throw new WebException("404");
+                System.Console.WriteLine(e);
                 return null;
             }
         }

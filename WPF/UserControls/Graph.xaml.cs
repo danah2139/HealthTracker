@@ -26,10 +26,10 @@ namespace WPF.UserControls
     {
         public GraphVM GraphVM { get; set; }
 
-        public Graph(int id)
+        public Graph()
         {
             InitializeComponent();
-            GraphVM = new GraphVM(id);
+            GraphVM = new GraphVM();
             this.DataContext = GraphVM;
             //showColumnChart();
             //LoadLineChartData();

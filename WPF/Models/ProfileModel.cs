@@ -16,10 +16,10 @@ namespace WPF.Models
             FoodBL = new FoodBL();
 
         }
-        public User GetUserInfo(int id)
+        public User GetUserInfo()
         {
 
-            return FoodBL.getUserDataById(id);
+            return FoodBL.getUserDataById(Id);
 
         }
         public void AddUser()
@@ -43,8 +43,8 @@ namespace WPF.Models
             get { return id; }
             set { id = value; }
         }
-        private DateTime dateOfBirth;
-        public DateTime DateOfBirth
+        private string dateOfBirth;
+        public string DateOfBirth
         {
             get { return dateOfBirth; }
             set { dateOfBirth = value; }

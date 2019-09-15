@@ -36,6 +36,7 @@
         </Style>
     </UserControl.Resources>
 
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -43,7 +44,7 @@
         </Grid.ColumnDefinitions>
         <charting:Chart Name="tempChart" DataContext="{Binding WeeksWeightInfo}"  Foreground="WhiteSmoke" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
             <charting:Chart.Axes>
-                <charting:LinearAxis Orientation="Y" Visibility="Hidden" ShowGridLines="False" Maximum="46" Minimum="0"/>
+                <charting:LinearAxis Orientation="Y" ShowGridLines="False" Maximum="160" Minimum="0"/>
                 <charting:CategoryAxis Orientation="X" MajorTickMarkStyle="{StaticResource PerformanceChartMajorTickMarkStyle}"/>
             </charting:Chart.Axes>
 
@@ -76,9 +77,6 @@
                                     <ControlTemplate TargetType="charting:LineDataPoint">
                                         <Grid>
                                             <Ellipse Fill="{TemplateBinding Background}"/>
-                                            <Canvas>
-                                                <TextBlock Text="{Binding Value, StringFormat= {}{0}&#186;}" Margin="0,-15,0,0"/>
-                                            </Canvas>
                                         </Grid>
                                     </ControlTemplate>
                                 </Setter.Value>
@@ -105,6 +103,9 @@
                 </ControlTemplate>
             </charting:Chart.Template>
         </charting:Chart>
+        <TextBox x:Name="idTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.Id, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="9.4,40,0,388" Height="22" HorizontalAlignment="Left" Grid.Column="1" RenderTransformOrigin="0.71,-7.973"/>
+        <RadioButton Content="Enter Id" Grid.Column="1" Command="{Binding AddGraph}" HorizontalAlignment="Left" Margin="5.4,91,0,0" VerticalAlignment="Top" Width="113" Height="26"/>
+
 
 
     </Grid>

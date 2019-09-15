@@ -90,11 +90,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddProfileCommand.cs" />
+    <Compile Include="Commands\AddToGraphCommand.cs" />
+    <Compile Include="Commands\CheckLogInCommand.cs" />
+    <Compile Include="Commands\GoToProfileCommand.cs" />
+    <Compile Include="Commands\LogInCommand.cs" />
+    <Compile Include="Models\LogInModel.cs" />
     <Compile Include="UserControls\EnterMeals.xaml.cs">
       <DependentUpon>EnterMeals.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\Graph.xaml.cs">
       <DependentUpon>Graph.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MainWindowButtons.xaml.cs">
       <DependentUpon>MainWindowButtons.xaml</DependentUpon>
@@ -104,6 +112,7 @@
     </Compile>
     <Compile Include="ViewModels\EnterMealsVM.cs" />
     <Compile Include="ViewModels\GraphVM.cs" />
+    <Compile Include="ViewModels\LogInVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
     <Compile Include="ViewModels\ProfileVM.cs" />
     <Page Include="MainWindow.xaml">
@@ -126,6 +135,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Graph.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -165,6 +178,7 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="Resources\BRADHITC.TTF" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -190,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\user1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\fitness-stuff-grey-background.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

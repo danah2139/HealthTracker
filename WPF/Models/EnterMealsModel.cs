@@ -10,8 +10,8 @@ namespace WPF.Models
 {
     public class EnterMealsModel
     {
-      FoodBL FoodBL { get; set; }
-      public EnterMealsModel(string name)
+        public FoodBL FoodBL { get; set; }
+        public EnterMealsModel()
         {
             FoodBL = new FoodBL();
         }
@@ -22,8 +22,15 @@ namespace WPF.Models
 
         public string[] getListOfFoodDetails()
         {
-            string[] details = { "Name","Fat", "Protein","Carbohydrate" };
+            string[] details = { "Name", "Fat", "Protein", "Carbohydrate" };
             return details;
+        }
+
+        private string name;
+        public string Name
+        {
+            get { return name; }
+            set { name = value; }
         }
         //we need to add lists/db for person
 

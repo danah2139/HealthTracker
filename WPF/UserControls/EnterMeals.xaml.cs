@@ -22,14 +22,12 @@ namespace WPF.UserControls
     public partial class EnterMeals : UserControl
     {
         public EnterMealsVM EnterMealsVM { get; set; }
-        public EnterMeals(string name)
+        public EnterMeals()
         {
             InitializeComponent();
-            EnterMealsVM = new EnterMealsVM(name);
+            EnterMealsVM = new EnterMealsVM();
             this.DataContext = EnterMealsVM;
-            
 
-            
         }
     }
 }

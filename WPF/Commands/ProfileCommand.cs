@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
-
+using WPF.ViewModels;
 
 namespace WPF.Commands
 {
@@ -13,6 +13,12 @@ namespace WPF.Commands
     {
         public event EventHandler CanExecuteChanged;
         public event EventHandler ShowProfile;
+        //public MainWindowVM CurrentVM { get; set; }
+
+        //public ProfileCommand(MainWindowVM currentVM)
+        //{
+        //    this.CurrentVM = currentVM;
+        //}
 
         public bool CanExecute(object parameter)
         {
@@ -22,6 +28,7 @@ namespace WPF.Commands
         public void Execute(object parameter)
         {
             ShowProfile?.Invoke(this, new EventArgs());
+            //CurrentVM.ProfileCommand_ShowProfile();
         }
     }
 }

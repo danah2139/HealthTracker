@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WPF.ViewModels;
 
 namespace WPF.Commands
 {
@@ -11,6 +12,11 @@ namespace WPF.Commands
     {
         public event EventHandler CanExecuteChanged;
         public event EventHandler ShowEnterMeals;
+        //public MainWindowVM CurrentVM { get; set; }
+        //public EnterMealsCommand(MainWindowVM currentVM)
+        //{
+        //    this.CurrentVM = currentVM;
+        //}
 
         public bool CanExecute(object parameter)
         {
@@ -20,6 +26,7 @@ namespace WPF.Commands
         public void Execute(object parameter)
         {
             ShowEnterMeals?.Invoke(this, new EventArgs());
+            //CurrentVM.MealCommand_ShowEnterMeals();
         }
 
     }

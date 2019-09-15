@@ -4,22 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\dana\Source\Repos\HealthTracker\WPF\obj\Debug\
+C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\
 WPF
 none
 false
 DEBUG;TRACE
-C:\Users\dana\Source\Repos\HealthTracker\WPF\App.xaml
-5-1516346697
+C:\Users\dana\heathtracker\HealthTracker\WPF\App.xaml
+6-101141425
 
-<<<<<<< HEAD
-25-839968311
-31-650887325
-=======
-202087276495
-311334263325
->>>>>>> d87533e83289c24f980b434e11f395558c41b824
-MainWindow.xaml;UserControls\EnterMeals.xaml;UserControls\Graph.xaml;UserControls\MainWindowButtons.xaml;UserControls\Profile.xaml;
+28-658280242
+31-2028386604
+MainWindow.xaml;UserControls\EnterMeals.xaml;UserControls\Graph.xaml;UserControls\LogIn.xaml;UserControls\MainWindowButtons.xaml;UserControls\Profile.xaml;
 
-True
+False
 

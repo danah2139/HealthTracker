@@ -80,6 +80,14 @@
     <Compile Include="Migrations\201909121943430_newMigration2.Designer.cs">
       <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201909131134127_new.cs" />
+    <Compile Include="Migrations\201909131134127_new.Designer.cs">
+      <DependentUpon>201909131134127_new.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201909131148084_datatime2string.cs" />
+    <Compile Include="Migrations\201909131148084_datatime2string.Designer.cs">
+      <DependentUpon>201909131148084_datatime2string.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -114,6 +122,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201909121943430_newMigration2.resx">
       <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909131134127_new.resx">
+      <DependentUpon>201909131134127_new.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201909131148084_datatime2string.resx">
+      <DependentUpon>201909131148084_datatime2string.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.Commands;
 
 namespace WPF.UserControls
 {
@@ -20,9 +21,22 @@ namespace WPF.UserControls
     /// </summary>
     public partial class MainWindowButtons : UserControl
     {
+        public LogInCommand LogInCommand { get; set; }
+        public GraphCommand GraphCommand { get; set; }
+        public ProfileCommand ProfileCommand { get; set; }
+        public EnterMealsCommand EnterMealsCommand { get; set; }
+
         public MainWindowButtons()
         {
             InitializeComponent();
+            LogInCommand = new LogInCommand();
+            GraphCommand = new GraphCommand();
+            ProfileCommand = new ProfileCommand();
+            EnterMealsCommand = new EnterMealsCommand();
+
+
+
+
         }
     }
 }

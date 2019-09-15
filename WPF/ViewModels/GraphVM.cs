@@ -7,24 +7,36 @@ using WPF.Models;
 using BE;
 using System.Collections.ObjectModel;
 using System.Windows.Controls;
-
+using System.Windows.Input;
+using WPF.UserControls;
+using WPF.Commands;
 
 namespace WPF.ViewModels
 {
     public class GraphVM
     {
-        GraphModel GraphModel { get; set; }
-        public int Id { get; set; }
+        public GraphModel GraphModel { get; set; }
+        public Graph Graph { get; set; }
+        public ICommand AddGraph { get; set; }
+        //public int Id { get; set; }
         //public ObservableCollection<WeekComleteWeightInfo> WeeksWeightInfo(GraphModel);
         public ObservableCollection<KeyValuePair<string, double>> WeeksWeightInfo { get; set; }
 
-        public GraphVM(int id)
+        public GraphVM()
         {
-            Id = id;
+            //Id = id;
             GraphModel = new GraphModel();
-            WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation(id));
+            AddGraph = new AddToGraphCommand(this);
+            WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation());
             //FillCollection(id,weeks);
         }
+
+        internal void AddNewGraph()
+        {
+            GraphModel.GetLstWeeksInformation();
+        }
+
+
 
         //private void FillCollection(int id,DateTime[] weeks)
         //{

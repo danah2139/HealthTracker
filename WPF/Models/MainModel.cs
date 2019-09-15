@@ -13,6 +13,13 @@ namespace WPF.Models
 
         }
 
+        //private int userControl;
+        //public int UserControl
+        //{
+        //    get { return userControl; }
+        //    set { userControl = value; }
+        //}
+
         public BL.FoodBL getModel()
         {
             return new BL.FoodBL();
