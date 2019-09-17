@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using BL;
 using BE;
+using System.Windows;
+
 namespace WPF.Models
 {
     public class GraphModel
@@ -28,7 +30,12 @@ namespace WPF.Models
         //public List<WeekComleteWeightInfo> get
         public List<KeyValuePair<string,double>> GetLstWeeksInformation() {
 
-            var tempResult = FoodBL.getUserDataById(id);
+            var tempResult = FoodBL.getUserDataById(Id);
+            if (tempResult == null)
+            {
+                MessageBox.Show("Id not exist!");
+                return null;
+            }
             List<KeyValuePair<string, double>> result = new List<KeyValuePair<string, double>>();
             //for(int i=0; i<8; i++)
             //{

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BL;
 using BE;
-
+using System.Windows;
 
 namespace WPF.Models
 {
@@ -19,8 +19,19 @@ namespace WPF.Models
         }
         public User GetUserInfo()
         {
-
-            return FoodBL.getUserDataById(Id);
+            if (Id == 0)
+            {
+                MessageBox.Show("please insert an Id");
+                return null;
+            }
+            User user = FoodBL.getUserDataById(Id);
+            if (user == null)
+            {
+                MessageBox.Show("Id not exist");
+                return null;
+            }
+            MessageBox.Show("Sign In Successfully");
+            return user;
 
         }
         private int id;

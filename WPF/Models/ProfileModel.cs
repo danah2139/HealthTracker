@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using BE;
 using BL;
 
@@ -29,6 +30,7 @@ namespace WPF.Models
             
 
             FoodBL.addUser(user);
+            MessageBox.Show("Id add Successfully");
         }
 
         private string name;

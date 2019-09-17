@@ -15,15 +15,15 @@ namespace WPF.ViewModels
     {
         public LogIn LogIn { get; set; }
         public LogInModel LogInModel { get; set; }
-        //public GoToProfileCommand GoToProfileCommand { get; set; }
-        //public ICommand CheckLogIn { get; set; }
+        public GoToProfileCommand GoToProfileCommand { get; set; }
+        public ICommand CheckLogInCommand { get; set; }
 
         // public ObservableCollection<User> Users { get; set; }
         public LogInVM()
         {
             LogInModel = new LogInModel();
-            //CheckLogIn = new CheckLogInCommand(this);
-            //GoToProfileCommand = GoToProfileCommand(this);
+            CheckLogInCommand = new CheckLogInCommand(this);
+            GoToProfileCommand = new GoToProfileCommand();
             //ProfileCommand = new ProfileCommand(this);
             //Users = new ObservableCollection<User>();
 
@@ -34,10 +34,10 @@ namespace WPF.ViewModels
             LogInModel.GetUserInfo();
         }
 
-        internal void GoTOProfile()
-        {
+        //internal void GoTOProfile()
+        //{
 
 
-        }
+        //}
     }
 }

@@ -63,6 +63,7 @@ namespace WPF.ViewModels
         public GraphCommand GraphCommand { set; get; }
         public ProfileCommand ProfileCommand { set; get; }
         public EnterMealsCommand EnterMealsCommand { set; get; }
+        public GoToProfileCommand GoToProfileCommand { get; set;}
         public string[] Names { set; get; }//pural
         private MainModel Model { set; get; }
         //MainWindow MainWindow { get; set; }
@@ -78,11 +79,13 @@ namespace WPF.ViewModels
             GraphCommand = new GraphCommand();
             EnterMealsCommand = new EnterMealsCommand();
             ProfileCommand = new ProfileCommand();
+            GoToProfileCommand = new GoToProfileCommand();
             //Cities = Model.getListOfCities();
             LogInCommand.ShowLogIn += LogInCommand_ShowlogIn;
             ProfileCommand.ShowProfile += ProfileCommand_ShowProfile;
             EnterMealsCommand.ShowEnterMeals += MealCommand_ShowEnterMeals;
             GraphCommand.ShowGraph += GraphCommand_ShowGraph;
+            GoToProfileCommand.ShowNewProfile += ProfileCommand_ShowNewProfile;
             //MainWindowButtons.ProfileButton.IsChecked = true;
 
 
@@ -126,6 +129,8 @@ namespace WPF.ViewModels
             this.UserControl = new Graph();
         }
 
+        
+
         //internal void GraphCommand_ShowGraph()
         //{
         //    this.UserControl = new Graph();
@@ -150,6 +155,11 @@ namespace WPF.ViewModels
         //}
 
         internal void ProfileCommand_ShowProfile(object sender, EventArgs e)
+        {
+            this.UserControl = new Profile();
+        }
+
+        internal void ProfileCommand_ShowNewProfile(object sender, EventArgs e)
         {
             this.UserControl = new Profile();
         }

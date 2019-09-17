@@ -58,10 +58,10 @@ namespace DAL
             using (var db = new InfoFoodContext())
             {
                 var user = db.Users.FirstOrDefault(a => a.ID == id);
-                if (user == null)
-                {
-                    user = new User();
-                }
+                //if (user == null)
+                //{
+                    //user = new User();
+                //}
                 return user;
 
             }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WPF.Commands;
 using WPF.ViewModels;
 
 namespace WPF.UserControls
@@ -23,11 +24,15 @@ namespace WPF.UserControls
     public partial class LogIn : UserControl
     {
         public LogInVM LogInVM { get; set; }
+        //public ProfileCommand ProfileCommand { get; set; }
+        //MainWindowVM MainWindowVM { get; set; }
+
 
         public LogIn()
         {
             InitializeComponent();
             LogInVM = new LogInVM();
+            //ProfileCommand = new ProfileCommand();
             this.DataContext = LogInVM;
 
         }

@@ -19,7 +19,7 @@
         <Style TargetType="TextBlock">
             <Setter Property="FontSize" Value="22"/>
             <Setter Property="FontStretch" Value="Expanded"/>
-            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="Foreground" Value="Black"/>
             <Setter Property="FontFamily" Value="Gisha"/>
             <Setter Property="BitmapEffect">
                 <Setter.Value>
