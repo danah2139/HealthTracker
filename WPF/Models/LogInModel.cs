@@ -38,7 +38,7 @@ namespace WPF.Models
         public int Id
         {
             get { return id; }
-            set { id = value; }
+            set { SetProperty(ref id, value); }
         }
 
 
