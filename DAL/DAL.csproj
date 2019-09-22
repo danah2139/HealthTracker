@@ -52,41 +52,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FoodDAL.cs" />
-    <Compile Include="Migrations\201909091838559_InitialCreate.cs" />
-    <Compile Include="Migrations\201909091838559_InitialCreate.Designer.cs">
-      <DependentUpon>201909091838559_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201909200921224_bka.cs" />
+    <Compile Include="Migrations\201909200921224_bka.Designer.cs">
+      <DependentUpon>201909200921224_bka.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909110901542_InitialCreate1.cs" />
-    <Compile Include="Migrations\201909110901542_InitialCreate1.Designer.cs">
-      <DependentUpon>201909110901542_InitialCreate1.cs</DependentUpon>
+    <Compile Include="Migrations\201909201526584_weight.cs" />
+    <Compile Include="Migrations\201909201526584_weight.Designer.cs">
+      <DependentUpon>201909201526584_weight.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201909121842525_Migration.cs" />
-    <Compile Include="Migrations\201909121842525_Migration.Designer.cs">
-      <DependentUpon>201909121842525_Migration.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909121914170_Migration1.cs" />
-    <Compile Include="Migrations\201909121914170_Migration1.Designer.cs">
-      <DependentUpon>201909121914170_Migration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909121929543_newMigratin.cs" />
-    <Compile Include="Migrations\201909121929543_newMigratin.Designer.cs">
-      <DependentUpon>201909121929543_newMigratin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909121937113_newMigration1.cs" />
-    <Compile Include="Migrations\201909121937113_newMigration1.Designer.cs">
-      <DependentUpon>201909121937113_newMigration1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909121943430_newMigration2.cs" />
-    <Compile Include="Migrations\201909121943430_newMigration2.Designer.cs">
-      <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909131134127_new.cs" />
-    <Compile Include="Migrations\201909131134127_new.Designer.cs">
-      <DependentUpon>201909131134127_new.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201909131148084_datatime2string.cs" />
-    <Compile Include="Migrations\201909131148084_datatime2string.Designer.cs">
-      <DependentUpon>201909131148084_datatime2string.cs</DependentUpon>
+    <Compile Include="Migrations\201909211820246_hh.cs" />
+    <Compile Include="Migrations\201909211820246_hh.Designer.cs">
+      <DependentUpon>201909211820246_hh.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -100,34 +76,37 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\BE.FoodObject+Item.datasource" />
+    <None Include="Properties\DataSources\BE.FoodObject+List.datasource" />
+    <None Include="Properties\DataSources\BE.FoodObject+RootObject.datasource" />
+    <None Include="Properties\DataSources\BE.FoodObject.datasource" />
+    <None Include="Properties\DataSources\BE.Meal.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+Desc.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+Food.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+Food2.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+Nutrient.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+RootObject.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject+Source.datasource" />
+    <None Include="Properties\DataSources\BE.ReportObject.datasource" />
+    <None Include="Properties\DataSources\BE.User+Activity.datasource" />
+    <None Include="Properties\DataSources\BE.User+FamilyStatus.datasource" />
+    <None Include="Properties\DataSources\BE.User+Gender.datasource" />
+    <None Include="Properties\DataSources\BE.User+Mood.datasource" />
+    <None Include="Properties\DataSources\BE.User.datasource" />
+    <None Include="Properties\DataSources\BE.WeekComleteWeightInfo.datasource" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201909091838559_InitialCreate.resx">
-      <DependentUpon>201909091838559_InitialCreate.cs</DependentUpon>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201909200921224_bka.resx">
+      <DependentUpon>201909200921224_bka.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909110901542_InitialCreate1.resx">
-      <DependentUpon>201909110901542_InitialCreate1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909201526584_weight.resx">
+      <DependentUpon>201909201526584_weight.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121842525_Migration.resx">
-      <DependentUpon>201909121842525_Migration.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121914170_Migration1.resx">
-      <DependentUpon>201909121914170_Migration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121929543_newMigratin.resx">
-      <DependentUpon>201909121929543_newMigratin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121937113_newMigration1.resx">
-      <DependentUpon>201909121937113_newMigration1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909121943430_newMigration2.resx">
-      <DependentUpon>201909121943430_newMigration2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909131134127_new.resx">
-      <DependentUpon>201909131134127_new.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201909131148084_datatime2string.resx">
-      <DependentUpon>201909131148084_datatime2string.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201909211820246_hh.resx">
+      <DependentUpon>201909211820246_hh.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

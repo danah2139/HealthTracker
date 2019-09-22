@@ -25,8 +25,9 @@ namespace WPF.Commands
 
         public void Execute(object parameter)
         {
-            ShowEnterMeals?.Invoke(this, new EventArgs());
+             ShowEnterMeals?.Invoke(this, new EventArgs());
             //CurrentVM.MealCommand_ShowEnterMeals();
+            //this.CurrentVM.Operation(3);
         }
 
     }

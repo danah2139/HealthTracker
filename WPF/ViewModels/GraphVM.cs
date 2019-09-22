@@ -18,7 +18,12 @@ namespace WPF.ViewModels
         public GraphModel GraphModel { get; set; }
         public Graph Graph { get; set; }
         public ICommand AddGraph { get; set; }
-        //public int Id { get; set; }
+        private string id;
+        public string Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
         //public ObservableCollection<WeekComleteWeightInfo> WeeksWeightInfo(GraphModel);
         public ObservableCollection<KeyValuePair<string, double>> WeeksWeightInfo { get; set; }
 
@@ -27,13 +32,16 @@ namespace WPF.ViewModels
             //Id = id;
             GraphModel = new GraphModel();
             AddGraph = new AddToGraphCommand(this);
+            //WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>();
             WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation());
             //FillCollection(id,weeks);
         }
 
-        internal void AddNewGraph()
+        public void AddNewGraph()
         {
-            GraphModel.GetLstWeeksInformation();
+              GraphModel.GetLstWeeksInformation();
+        //    this.WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation());
+
         }
 
 

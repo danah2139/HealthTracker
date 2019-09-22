@@ -94,6 +94,7 @@
     <Compile Include="Commands\CheckLogInCommand.cs" />
     <Compile Include="Commands\GoToProfileCommand.cs" />
     <Compile Include="Commands\LogInCommand.cs" />
+    <Compile Include="Commands\UpdateProfileCommand.cs" />
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="UserControls\EnterMeals.xaml.cs">
       <DependentUpon>EnterMeals.xaml</DependentUpon>

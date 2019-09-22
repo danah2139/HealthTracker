@@ -29,6 +29,7 @@ namespace WPF.Commands
         {
             ShowProfile?.Invoke(this, new EventArgs());
             //CurrentVM.ProfileCommand_ShowProfile();
+            //this.CurrentVM.Operation(2);
         }
     }
 }

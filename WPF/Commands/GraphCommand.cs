@@ -28,6 +28,7 @@ namespace WPF.Commands
         {
             ShowGraph?.Invoke(this, new EventArgs());
             //CurrentVM.GraphCommand_ShowGraph();
+            //this.CurrentVM.Operation(4);
         }
 
 

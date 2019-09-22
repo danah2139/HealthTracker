@@ -70,7 +70,7 @@
 
         <Label Content="Hello Guest" HorizontalAlignment="Left" Margin="334,152,0,0" VerticalAlignment="Top" Height="30" Width="140" FontFamily="Segoe WP Semibold"/>
         <RadioButton Content="Sign In" Command ="{Binding CheckLogInCommand}" HorizontalAlignment="Left" Margin="293,241,0,0" VerticalAlignment="Top"/>
-        <extToolkit:WatermarkTextBox Watermark="Enter Your Id" Text="{Binding LoginModel.Id}" HorizontalAlignment="Left" Height="23" Margin="399,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
+        <extToolkit:WatermarkTextBox Watermark="Enter Your Id" Text="{Binding LogInModel.Id}" HorizontalAlignment="Left" Height="23" Margin="399,239,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" />
         <RadioButton Content="Sign Up" Command="{Binding GoToProfileCommand}"  HorizontalAlignment="Left" Margin="373,298,0,0" VerticalAlignment="Top"/>
 
     </Grid>

@@ -11,22 +11,22 @@
     <UserControl.Resources>
         <ObjectDataProvider x:Key="getGenderFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="pro:User+Gender"/>
+                <x:Type TypeName="pro:Gender"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider x:Key="getMoodFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="pro:User+Mood"/>
+                <x:Type TypeName="pro:Mood"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider x:Key="getfamilyStatusFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="pro:User+FamilyStatus"/>
+                <x:Type TypeName="pro:FamilyStatus"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
         <ObjectDataProvider x:Key="getActivityFromEnum" MethodName="GetValues" ObjectType="{x:Type System:Enum}">
             <ObjectDataProvider.MethodParameters>
-                <x:Type TypeName="pro:User+Activity"/>
+                <x:Type TypeName="pro:Activity"/>
             </ObjectDataProvider.MethodParameters>
         </ObjectDataProvider>
     </UserControl.Resources>
@@ -72,7 +72,7 @@
                         <Label VerticalAlignment="center" Grid.Row="2" Margin="0,4.4,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content=" Birth Date:" Height="26" Width="69" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
                         <DatePicker x:Name="birthDayDatePicker" VerticalAlignment="Center" SelectedDate="{Binding ProfileModel.DateOfBirth, Mode=TwoWay , NotifyOnValidationError=True, ValidatesOnExceptions=true}" Grid.Row="2" HorizontalAlignment="Left" Grid.Column="2" Margin="0.4,5.4,0,6.6" Height="24" Width="102" FontStyle="Italic" Grid.ColumnSpan="3" />
                         <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Person Gender:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
-                        <ComboBox x:Name="genderPersonComboBox" ItemsSource="{Binding Source={StaticResource getGenderFromEnum}}" Width=" 120" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Gender}" Grid.Row="3" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <ComboBox x:Name="genderPersonComboBox" ItemsSource="{Binding Source={StaticResource getGenderFromEnum}}" Width=" 120" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Gender,UpdateSourceTrigger=PropertyChanged}" Grid.Row="3" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
                         <Label VerticalAlignment="Center" Margin="3,6,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content="Height:" Grid.Row="4" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
                         <TextBox x:Name="heightTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.Height, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6,0,8.6" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="4" Grid.ColumnSpan="3"/>
                         <Label VerticalAlignment="Center" Margin="3,5.4,0,6.2" HorizontalAlignment="Left" Grid.Column="0" Content="weight:" Grid.Row="5" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
@@ -82,11 +82,11 @@
                         <Label VerticalAlignment="Center" Margin="3,5.8,0,5.8" HorizontalAlignment="Left" Grid.Column="0" Content="Date of Weight:" Grid.Row="7" Height="26" Width="93" Background="{x:Null}" Foreground="white" FontFamily="Yu Gothic UI Semibold" Grid.ColumnSpan="2"/>
                         <DatePicker x:Name="dateOfWeightTextBox" Width=" 120" VerticalAlignment="Center" SelectedDate="{Binding ProfileModel.DateOfWeight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.8,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="7" Grid.ColumnSpan="3"/>
                         <Label VerticalAlignment="Center" Grid.Row="8" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="MooD:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
-                        <ComboBox x:Name="moodComboBox"  Width=" 120"  ItemsSource="{Binding Source={StaticResource getMoodFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Mood}" Grid.Row="8" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <ComboBox x:Name="moodComboBox"  Width=" 120"  ItemsSource="{Binding Source={StaticResource getMoodFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Mood ,UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
                         <Label VerticalAlignment="Center" Grid.Row="9" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Family status:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
-                        <ComboBox x:Name="familyStatusComboBox" Width=" 120"  ItemsSource="{Binding Source={StaticResource getfamilyStatusFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.FamilyStatus}" Grid.Row="9" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <ComboBox x:Name="familyStatusComboBox" Width=" 120"  ItemsSource="{Binding Source={StaticResource getfamilyStatusFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.FamilyStatus, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
                         <Label VerticalAlignment="Center" Grid.Row="10" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Activity:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
-                        <ComboBox x:Name="activityComboBox" Width=" 120" VerticalAlignment="Center"  ItemsSource="{Binding Source={StaticResource getActivityFromEnum}}" SelectedItem="{Binding ProfileModel.Activity}" Grid.Row="10" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <ComboBox x:Name="activityComboBox" Width=" 120" VerticalAlignment="Center"  ItemsSource="{Binding Source={StaticResource getActivityFromEnum}}" SelectedItem="{Binding ProfileModel.Activity, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
                     </Grid>
                     <Button Name="Add" Command="{Binding AddProfile}" Content="Add" HorizontalAlignment="Right"  Margin="0,360,27.6,-67" VerticalAlignment="Top" Width="84" Height="27" FontFamily="Yu Gothic UI Semibold" Grid.Column="1" >
                         <Button.Style>
@@ -113,24 +113,45 @@
                             <ColumnDefinition Width=" Auto"/>
                         </Grid.ColumnDefinitions>
                         <Grid.RowDefinitions>
-                            <RowDefinition Height=" Auto"/>
-                            <RowDefinition Height=" Auto"/>
-                            <RowDefinition Height=" Auto"/>
-                            <RowDefinition Height=" Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
 
 
-                        <Label Content="Name:" Grid.Column="0" HorizontalAlignment="Left" Margin="3" Grid.Row="1" VerticalAlignment="Center" Foreground="White"/>
-                        <TextBox x:Name="nameTextBox1" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="3" Grid.Row="1" Text="{Binding Name, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" VerticalAlignment="Center" Width="120"/>
-                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="0,42.6,0,29.8" HorizontalAlignment="Left" Grid.Column="0" Content="Current Weight:" Height="26" Width="99" Foreground="white"/>
-                        <TextBox x:Name="weightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding Weight, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="10.2,51.6,-1.4,30.4" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
-                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,135.6,0,-60.8" HorizontalAlignment="Left" Grid.Column="0" Content="Hight:" Height="26" Width="99" Foreground="White"/>
-                        <TextBox x:Name="hightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding Height, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="7.2,141.6,0,-63.6" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
-                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,89.6,0,-18.8" HorizontalAlignment="Left" Grid.Column="0" Content="Goal Weight:" Height="26" Width="99" Foreground="white"/>
-                        <TextBox x:Name="goalWeightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding GoalWeight, Mode=TwoWay, NotifyOnValidationError=True,ValidatesOnExceptions=True}" Grid.Row="3" Margin="7.2,97.6,0,-18" HorizontalAlignment="Left" Grid.Column="1" Height="18" />
+                        <Label VerticalAlignment="Center" Grid.Row="0" Margin="3,-26,0,0" HorizontalAlignment="Left" Grid.Column="0" Content="Name:" Height="26" Width="42" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="nameTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.Name,Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Grid.Row="0" Margin="3.4,-18,0,0" HorizontalAlignment="Left" Grid.Column="2" Height="18" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Margin="3,6,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content="*Id:" Grid.Row="1" Height="26" Width="42" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="idTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.Id, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6,0,9.6" Height="22" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="1" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="center" Grid.Row="2" Margin="0,4.4,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content=" Birth Date:" Height="26" Width="69" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <DatePicker x:Name="birthDayDatePicker1" VerticalAlignment="Center" SelectedDate="{Binding ProfileModel.DateOfBirth, Mode=TwoWay , NotifyOnValidationError=True, ValidatesOnExceptions=true}" Grid.Row="2" HorizontalAlignment="Left" Grid.Column="2" Margin="0.4,5.4,0,6.6" Height="24" Width="102" FontStyle="Italic" Grid.ColumnSpan="3" />
+                        <Label VerticalAlignment="Center" Grid.Row="3" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Person Gender:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <ComboBox x:Name="genderPersonComboBox1" ItemsSource="{Binding Source={StaticResource getGenderFromEnum}}" Width=" 120" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Gender,UpdateSourceTrigger=PropertyChanged ,Mode=TwoWay}" Grid.Row="3" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Margin="3,6,0,5.6" HorizontalAlignment="Left" Grid.Column="0" Content="Height:" Grid.Row="4" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="heightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.Height, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6,0,8.6" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="4" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Margin="3,5.4,0,6.2" HorizontalAlignment="Left" Grid.Column="0" Content="weight:" Grid.Row="5" Height="26" Width="64" Background="{x:Null}" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <TextBox x:Name="weightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding  ProfileModel.Weight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.4,0,8.2" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="5" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Margin="3,5.8,0,5.8" HorizontalAlignment="Left" Grid.Column="0" Content="Goal Weight:" Grid.Row="6" Height="26" Width="93" Background="{x:Null}" Foreground="white" FontFamily="Yu Gothic UI Semibold" Grid.ColumnSpan="2"/>
+                        <TextBox x:Name="goalWeightTextBox1" Width=" 120" VerticalAlignment="Center" Text="{Binding ProfileModel.GoalWeight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.8,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="6" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Margin="3,5.8,0,5.8" HorizontalAlignment="Left" Grid.Column="0" Content="Date of Weight:" Grid.Row="7" Height="26" Width="93" Background="{x:Null}" Foreground="white" FontFamily="Yu Gothic UI Semibold" Grid.ColumnSpan="2"/>
+                        <DatePicker x:Name="dateOfWeightTextBox1" Width=" 120" VerticalAlignment="Center" SelectedDate="{Binding ProfileModel.DateOfWeight, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="3.4,6.8,0,7.8" Height="23" HorizontalAlignment="Left" Grid.Column="2"  Grid.Row="7" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Grid.Row="8" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="MooD:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <ComboBox x:Name="moodComboBox1"  Width=" 120"  ItemsSource="{Binding Source={StaticResource getMoodFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.Mood ,UpdateSourceTrigger=PropertyChanged}" Grid.Row="8" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Grid.Row="9" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Family status:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <ComboBox x:Name="familyStatusComboBox1" Width=" 120"  ItemsSource="{Binding Source={StaticResource getfamilyStatusFromEnum}}" VerticalAlignment="Center" SelectedItem="{Binding ProfileModel.FamilyStatus, UpdateSourceTrigger=PropertyChanged}" Grid.Row="9" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
+                        <Label VerticalAlignment="Center" Grid.Row="10" Margin="3,5.4,0,4" HorizontalAlignment="Left" Grid.Column="0" Content="Activity:" Height="25" Width="93" Grid.ColumnSpan="2" Foreground="White" FontFamily="Yu Gothic UI Semibold"/>
+                        <ComboBox x:Name="activityComboBox1" Width=" 120" VerticalAlignment="Center"  ItemsSource="{Binding Source={StaticResource getActivityFromEnum}}" SelectedItem="{Binding ProfileModel.Activity, UpdateSourceTrigger=PropertyChanged}" Grid.Row="10" Margin="3.4,5.4,0,6" Height="23" HorizontalAlignment="Left" Grid.Column="2" Grid.ColumnSpan="3"/>
 
                     </Grid>
-                    <Button Name="Update" Content=" Update " HorizontalAlignment="Left" Margin="177,323,0,0" VerticalAlignment="Top" Width=" 84" Height="27" >
+                    <Button Name="Update" Content=" Update " Command="{Binding UpdateProfileCommand}" HorizontalAlignment="Left" Margin="177,323,0,0" VerticalAlignment="Top" Width=" 84" Height="27" >
                         <Button.Style>
                             <Style>
                                 <Style.Triggers>

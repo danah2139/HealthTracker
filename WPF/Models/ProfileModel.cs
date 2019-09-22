@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,17 @@ using BL;
 
 namespace WPF.Models
 {
-    public class ProfileModel
+    public class ProfileModel:INotifyPropertyChanged
     {
         public FoodBL FoodBL { get; set; }
         public ProfileModel()
         {
             FoodBL = new FoodBL();
 
+
         }
+
+        public List<WeekComleteWeightInfo> LstWights { get; set; }
         public User GetUserInfo()
         {
 
@@ -26,21 +30,57 @@ namespace WPF.Models
         public void AddUser()
         {
 
-            BE.User user = new User(Name, Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender,Mood, FamilyStatus, Activity);
+            BE.User user = new User(Name,ID ,Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender,Mood, FamilyStatus, Activity, LstWights);
             
 
             FoodBL.addUser(user);
             MessageBox.Show("Id add Successfully");
         }
+        public void UpdateUser()
+        {
 
+            BE.User user = new User(Name, ID, Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender, Mood, FamilyStatus, Activity, LstWights);
+
+
+            FoodBL.UpdateUser(user);
+            MessageBox.Show("Id update Successfully");
+        }
+        public event PropertyChangedEventHandler GenderChanged;
+        public event PropertyChangedEventHandler MoodChanged;
+        public event PropertyChangedEventHandler FamilyStatusChanged;
+        public event PropertyChangedEventHandler ActivityChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public void OnPropertyChanged(string property=null)
+        {
+            this.GenderChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public void OnMoodChanged(string property = null)
+        {
+            this.MoodChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public void OnFamilyChanged(string property = null)
+        {
+            this.FamilyStatusChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
+        public void OnActivityChanged(string property = null)
+        {
+            this.ActivityChanged?.Invoke(this, new PropertyChangedEventArgs(property));
+        }
         private string name;
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
-        private int id;
-        public int Id
+        private int _id;
+        public int ID
+        {
+            get { return _id; }
+            set { _id = value; }
+        }
+        private string id;
+        public string Id
         {
             get { return id; }
             set { id = value; }
@@ -53,11 +93,12 @@ namespace WPF.Models
         }
 
         //public enum Genders { male, female, itsComplicated };
-        private User.Gender gender;
-        public User.Gender Gender
+        private Gender gender;
+        public Gender Gender
         {
-            get{return gender; }
-           set{gender = value;}
+             get         {return gender; }
+             set {gender = value; OnPropertyChanged(); }
+           // get; set;
         }
 
         private int height;
@@ -88,27 +129,27 @@ namespace WPF.Models
         }
 
         //public enum Moods { happy, sad, angry, bored, amused, moody, exited, nervous, stressed }
-        private User.Mood mood;
-        public User.Mood Mood
+        public Mood mood;
+        public Mood Mood
         {
             get { return mood; }
-            set { mood = value; }
+            set { mood = value; OnMoodChanged(); }
         }
 
         
-        private User.FamilyStatus familyStatus;
-        public User.FamilyStatus FamilyStatus
+        private FamilyStatus familyStatus;
+        public FamilyStatus FamilyStatus
         {
             get { return familyStatus; }
-            set { familyStatus = value; }
+            set { familyStatus = value; OnFamilyChanged(); }
         }
 
         //public enum ActivityEnum { work, home, fun, study, other }
-        private User.Activity activity;
-        public User.Activity Activity
+        private Activity activity;
+        public Activity Activity
         {
             get { return activity; }
-            set { activity = value; }
+            set { activity = value; OnActivityChanged(); }
         }
     }
 }

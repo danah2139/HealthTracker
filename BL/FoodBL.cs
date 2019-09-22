@@ -16,7 +16,7 @@ namespace BL
         {
             return dal.getFoodDataByName(name);
         }
-        public User getUserDataById(int id)
+        public User getUserDataById(string id)
         {
             return dal.getUser(id);
             
@@ -26,6 +26,17 @@ namespace BL
         {
             dal.addUser(user);
         }
+
+        public void UpdateUser(User user)
+        {
+            dal.updateUser(user);
+        }
+
+        public List<KeyValuePair<string, double>> getGraphData(string id)
+        {
+            return dal.getGraphData(id);
+        }
+
 
     }
 }

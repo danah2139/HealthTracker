@@ -12,14 +12,16 @@ namespace WPF.Models
     public class LogInModel
     {
         public FoodBL FoodBL { get; set; }
+        public GraphModel GraphModel { get; set; }
         public LogInModel()
         {
             FoodBL = new FoodBL();
+            GraphModel = new GraphModel();
 
         }
         public User GetUserInfo()
         {
-            if (Id == 0)
+            if (Id == "")
             {
                 MessageBox.Show("please insert an Id");
                 return null;
@@ -27,18 +29,26 @@ namespace WPF.Models
             User user = FoodBL.getUserDataById(Id);
             if (user == null)
             {
-                MessageBox.Show("Id not exist");
+                MessageBox.Show("Id doe's not exist");
                 return null;
             }
             MessageBox.Show("Sign In Successfully");
+            GraphModel.getId(Id); 
             return user;
 
         }
-        private int id;
-        public int Id
+
+        public string id;
+        public string Id
         {
             get { return id; }
-            set { SetProperty(ref id, value); }
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                }
+            }
         }
 
 

@@ -17,19 +17,27 @@ namespace WPF.ViewModels
         public Profile Profile { get; set; }
         public ProfileModel ProfileModel { get; set; }
         public ICommand AddProfile { get; set; }
+        public ICommand UpdateProfileCommand { get; set; }
 
-       // public ObservableCollection<User> Users { get; set; }
+
+        // public ObservableCollection<User> Users { get; set; }
         public ProfileVM()
         {
             ProfileModel = new ProfileModel();
             AddProfile = new AddProfileCommand(this);
             //Users = new ObservableCollection<User>();
-            
+            UpdateProfileCommand = new UpdateProfileCommand(this);
+
+
         }
 
         internal void AddNewProfile()
         {
             ProfileModel.AddUser();
+        }
+        internal void UpdateNewProfile()
+        {
+            ProfileModel.UpdateUser();
         }
     }
 }

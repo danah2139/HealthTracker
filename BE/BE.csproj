@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="FoodObject.cs" />
+    <Compile Include="MyEnums.cs" />
     <Compile Include="ReportObject.cs" />
     <Compile Include="Meal.cs" />
     <Compile Include="User.cs" />

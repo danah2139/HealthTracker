@@ -10,7 +10,6 @@ namespace DAL.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = true;
-            ContextKey = "DAL.FoodDAL+InfoFoodContext";
         }
 
         protected override void Seed(DAL.FoodDAL.InfoFoodContext context)

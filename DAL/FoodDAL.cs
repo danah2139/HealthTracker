@@ -17,15 +17,15 @@ namespace DAL
         public class TempData
         {
 
-            public ReportObject.RootObject _root;
-            public ReportObject.Desc _food;
+            public double weight;
+            public string dataOfWeight;
             //
         }   
         public class InfoFoodContext: DbContext
         {
            // public DbSet<ReportObject.RootObject> ReportFoodData { get; set;}
             public DbSet<User> Users { get; set;}
-         
+            public DbSet<WeekComleteWeightInfo> WeekComleteWeightInfos { get; set; }
         }
 
         public FoodDAL()
@@ -34,30 +34,50 @@ namespace DAL
             
         }
 
-
+        //public Void addWight()
         public void addUser(User user)
         {
             using (var db = new InfoFoodContext())
             {
+                if (getUser(user.UserId) != null)
+                {
+                    updateUser(user);
+                    return;
+                }
                 db.Users.Add(user); // adds the user to the DbSet in memory
+                db.WeekComleteWeightInfos.Add(new WeekComleteWeightInfo ( user.Id,user.UserId,user.Weight,user.DateOfWeight ));
                 db.SaveChanges(); // commits the changes to the database
             }
 
         }
-        public void updateUser(int id)
+        public void updateUser(User user)
         {
             using (var db = new InfoFoodContext())
             {
-                var user = db.Users.FirstOrDefault(a => a.ID == id);
+                var updaeUser = db.Users.FirstOrDefault(a => a.UserId == user.UserId);
+                if (user.DateOfWeight != updaeUser.DateOfWeight)
+                {
+                    db.WeekComleteWeightInfos.Add(new WeekComleteWeightInfo ( user.Id, user.UserId, user.Weight, user.DateOfWeight ));
+                }
+                db.Users.Find(updaeUser.Id).Height = user.Height;
+                db.Users.Find(updaeUser.Id).Weight = user.Weight;
+                db.Users.Find(updaeUser.Id).Name = user.Name;
+                db.Users.Find(updaeUser.Id).DateOfBirth = user.DateOfBirth;
+                db.Users.Find(updaeUser.Id).DateOfWeight = user.DateOfWeight;
+                db.SaveChanges();
+                
+                //db.weekComleteWeightInfos.Add()
+
+
                 //check later
             }
         }
 
-        public User getUser(int id)
+        public User getUser(string id)
         {
             using (var db = new InfoFoodContext())
             {
-                var user = db.Users.FirstOrDefault(a => a.ID == id);
+                var user = db.Users.FirstOrDefault(a => a.UserId == id);
                 //if (user == null)
                 //{
                     //user = new User();
@@ -78,12 +98,39 @@ namespace DAL
 
 
         }
+        public List<KeyValuePair<string,double>> getGraphData(string id)
+        {
+            using (var db = new InfoFoodContext())
+            {
+                // var result = db.WeekComleteWeightInfos.Where(a => lines);
+                //= from All .ToList();
+                //var result =
+                //db.WeekComleteWeightInfos.SqlQuery()
+                List<KeyValuePair<string, double>> list = new List<KeyValuePair<string, double>>();
+                
+                var result = (from c in db.WeekComleteWeightInfos
+                              where c.UserId ==id
+                              select new TempData
+                              {
+                                  dataOfWeight = c.CurrentDate,
+                                  weight = c.WeightNow
+                              }).ToList();
+                foreach (TempData i in result)
+                {
+                    list.Add(new KeyValuePair<string, double>(i.dataOfWeight,i.weight));
+                }
+                return list;
+            }
+
+
+        }
 
 
         public ReportObject.RootObject getFoodDataByName(string name)
         {
             try
             {
+                name.Replace(" ","%20");
                 HttpWebRequest SearchFoodWebReq = (HttpWebRequest)WebRequest.Create(string.Format(
                "http://api.nal.usda.gov/ndb/search/?format=JSON&q=" + name + "&sort=n&max=25&offset=0&api_key=W1IAZNHJlfPsg9FL1j1POAqUajeu50fjcicm8skg"));
 

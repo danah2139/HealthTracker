@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF.Commands;
+using WPF.ViewModels;
 
 namespace WPF.UserControls
 {
@@ -33,7 +34,7 @@ namespace WPF.UserControls
             GraphCommand = new GraphCommand();
             ProfileCommand = new ProfileCommand();
             EnterMealsCommand = new EnterMealsCommand();
-
+            //MainGrid.DataContext = new MainWindowVM();
 
 
 

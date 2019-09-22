@@ -28,24 +28,25 @@ namespace WPF
     public partial class MainWindow : Window
     {
         public MainWindowVM CurrentVM { get; set; }
-       // public ProfileCommand ProfileCommand { get; set; }
+        // public ProfileCommand ProfileCommand { get; set; }
 
         public MainWindow()
         {
-          InitializeComponent();
-  //          ToolTipService.ShowDurationProperty.OverrideMetadata(
-//               typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
- //           App.Current.Dispatcher.Invoke(new Action(() => Run()));
+            InitializeComponent();
+            //          ToolTipService.ShowDurationProperty.OverrideMetadata(
+            //               typeof(DependencyObject), new FrameworkPropertyMetadata(Int32.MaxValue));
+            //           App.Current.Dispatcher.Invoke(new Action(() => Run()));
+            //         CurrentVM = new MainWindowVM();
+            //   ProfileCommand = new ProfileCommand();
+            //MainGrid.DataContext = ButtonsUserControl.MainGrid.DataContext;
             CurrentVM = new MainWindowVM();
-         //   ProfileCommand = new ProfileCommand();
             this.DataContext = CurrentVM;
-           
-            
+
         }
-     
+
     }
 }
 
-   
-    
+
+
 

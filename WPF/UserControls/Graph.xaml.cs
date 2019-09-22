@@ -25,6 +25,7 @@ namespace WPF.UserControls
     public partial class Graph : UserControl
     {
         public GraphVM GraphVM { get; set; }
+        
 
         public Graph()
         {

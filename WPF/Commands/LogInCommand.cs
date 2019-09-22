@@ -12,7 +12,7 @@ namespace WPF.Commands
     {
         public event EventHandler CanExecuteChanged;
         public event EventHandler ShowLogIn;
-        //public MainWindowVM CurrentVM;
+        //public MainWindowVM CurrentVM { get; set; }
         //public LogInCommand(MainWindowVM currentVM)
         //{
         //    this.CurrentVM = currentVM;
@@ -27,7 +27,7 @@ namespace WPF.Commands
         {
             ShowLogIn?.Invoke(this, new EventArgs());
             //CurrentVM.LogInCommand_ShowlogIn();
-
+           // CurrentVM.Operation(1);
         }
     }
 }
