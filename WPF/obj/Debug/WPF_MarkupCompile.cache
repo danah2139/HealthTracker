@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\dana\heathtracker\HealthTracker\WPF\App.xaml
-6-101141425
+7-1822776367
 
-29-835953145
+33-337430141
 31-2028386604
-MainWindow.xaml;UserControls\EnterMeals.xaml;UserControls\Graph.xaml;UserControls\LogIn.xaml;UserControls\MainWindowButtons.xaml;UserControls\Profile.xaml;
+MainWindow.xaml;UserControls\EnterMeals.xaml;UserControls\Graph.xaml;UserControls\LogIn.xaml;UserControls\MainWindowButtons.xaml;UserControls\Profile.xaml;UserControls\ProfileDetails.xaml;
 
 False
 

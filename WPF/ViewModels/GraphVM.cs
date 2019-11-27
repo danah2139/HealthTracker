@@ -10,6 +10,7 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using WPF.UserControls;
 using WPF.Commands;
+using System.Windows.Forms;
 
 namespace WPF.ViewModels
 {
@@ -27,21 +28,21 @@ namespace WPF.ViewModels
         //public ObservableCollection<WeekComleteWeightInfo> WeeksWeightInfo(GraphModel);
         public ObservableCollection<KeyValuePair<string, double>> WeeksWeightInfo { get; set; }
 
-        public GraphVM()
+        public GraphVM(string id)
         {
             //Id = id;
-            GraphModel = new GraphModel();
+            GraphModel = new GraphModel(id);
             AddGraph = new AddToGraphCommand(this);
             //WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>();
-            WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation());
+            WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation(id));
             //FillCollection(id,weeks);
         }
 
         public void AddNewGraph()
         {
-              GraphModel.GetLstWeeksInformation();
+              //GraphModel.GetLstWeeksInformation();
         //    this.WeeksWeightInfo = new ObservableCollection<KeyValuePair<string, double>>(GraphModel.GetLstWeeksInformation());
-
+              
         }
 
 

@@ -55,3 +55,6 @@ C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\WPF.csproj.CoreCompileInp
 C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\WPF.csproj.CopyComplete
 C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\WPF.exe
 C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\WPF.pdb
+C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\UserControls\ProfileDetails.g.cs
+C:\Users\dana\heathtracker\HealthTracker\WPF\obj\Debug\UserControls\ProfileDetails.baml

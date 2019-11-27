@@ -4,16 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using WPF.UserControls;
 using WPF.ViewModels;
-using System.Windows.Controls;
-using System.ComponentModel;
 
 namespace WPF.Commands
 {
-    public class GoToProfileCommand : ICommand
+    public class CancelProfileCommand:ICommand
     {
-    
         public event EventHandler CanExecuteChanged;
 
         public bool CanExecute(object parameter)
@@ -23,8 +19,9 @@ namespace WPF.Commands
 
         public void Execute(object parameter)
         {
-          
-            ((LogInVM)parameter).GoTOProfile();
+
+            ((ProfileVM)parameter).close();
         }
+
     }
 }

@@ -16,7 +16,7 @@ namespace WPF.Models
         public LogInModel()
         {
             FoodBL = new FoodBL();
-            GraphModel = new GraphModel();
+            //GraphModel = new GraphModel();
 
         }
         public User GetUserInfo()
@@ -33,7 +33,6 @@ namespace WPF.Models
                 return null;
             }
             MessageBox.Show("Sign In Successfully");
-            GraphModel.getId(Id); 
             return user;
 
         }

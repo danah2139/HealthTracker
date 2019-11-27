@@ -17,7 +17,7 @@
     </Style>
     <Style TargetType="RadioButton">
         <Setter Property="Background" Value="Transparent"/>
-        <Setter Property="Foreground" Value="#FF614C4C"/>
+        <Setter Property="Foreground" Value="#FF110F0F"/>
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -67,9 +67,9 @@
             <ColumnDefinition Width="4*"/>
             <ColumnDefinition Width="4*"/>
         </Grid.ColumnDefinitions>
-        <RadioButton Name="LogInButton" Content="LogIn" Grid.Column="0"  Command="{Binding LogInCommand}"/>
-        <RadioButton Name="ProfileButton" Content="Profile" Grid.Column="1"  Command="{Binding ProfileCommand}"/>
-        <RadioButton Name="enttermealsButton" Content="EnterMeals" Grid.Column="2" Command="{Binding EnterMealsCommand}"/>
-        <RadioButton Name="graphButton" Content="Graph" Grid.Column="3"  Command="{Binding GraphCommand}"/>
+        <RadioButton Name="LogInButton" Content="Log out" Grid.Column="0"  Command="{Binding LogInCommand}" FontSize="40" FontWeight="Light"/>
+        <RadioButton Name="ProfileButton" Content="Profile" Grid.Column="1"  Command="{Binding ProfileCommand}" FontSize="40" FontWeight="Light"/>
+        <RadioButton Name="enttermealsButton" Content="Meals" Grid.Column="2" Command="{Binding EnterMealsCommand}" FontSize="40" FontWeight="Light"/>
+        <RadioButton Name="graphButton" Content="Graph" Grid.Column="3"  Command="{Binding GraphCommand}" FontSize="40" FontWeight="Light"/>
     </Grid>
 </UserControl>

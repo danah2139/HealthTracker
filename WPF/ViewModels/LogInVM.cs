@@ -4,15 +4,16 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WPF.Commands;
 using WPF.Models;
 using WPF.UserControls;
-
+using BE;
 
 namespace WPF.ViewModels
 {
-    public class LogInVM: INotifyPropertyChanged
+    public class LogInVM: DependencyObject, INotifyPropertyChanged
     {
         public LogIn LogIn { get; set; }
         public LogInModel LogInModel { get; set; }
@@ -25,23 +26,77 @@ namespace WPF.ViewModels
         {
             LogInModel = new LogInModel();
             CheckLogInCommand = new CheckLogInCommand(this);
-            GoToProfileCommand = new GoToProfileCommand(this);
+            GoToProfileCommand = new GoToProfileCommand();
      //       ProfileCommand = new ProfileCommand();
             //Users = new ObservableCollection<User>();
 
         }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        internal void CheckLogInNow()
+        public string id;
+        public string Id
         {
-            LogInModel.GetUserInfo();
+            get { return id; }
+            set
+            {
+                if (id != value)
+                {
+                    id = value;
+                }
+            }
         }
 
-        internal void GoTOProfile()
+        public event PropertyChangedEventHandler PropertyChanged;
+        private void NotifyPropertyChanged(String propertyName)
         {
-            MainWindowVM = new MainWindowVM();
-            MainWindowVM.UserControl = new Profile();
+            var handler = PropertyChanged;
+            if (handler != null)
+                handler(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        //true- the popup of register will be opened when click on register
+        public static readonly DependencyProperty RegisterPopUpIsOpen = DependencyProperty.Register("RegisterPopUpIsOpenProperty", typeof(Boolean), typeof(LogInVM), new PropertyMetadata(false));
+        public Boolean RegisterPopUpIsOpenProperty
+        {
+            get { return (Boolean)GetValue(RegisterPopUpIsOpen); }
+            set { SetValue(RegisterPopUpIsOpen, value); }
+        }
+
+        public static readonly DependencyProperty IsRegistrationDone = DependencyProperty.Register("IsRegistrationDoneProperty", typeof(Boolean), typeof(LogInVM), new PropertyMetadata(new PropertyChangedCallback(onRegisterationDonePropertyChanged)));
+        public Boolean IsRegistrationDoneProperty
+        {
+            get { return (Boolean)GetValue(IsRegistrationDone); }
+            set { SetValue(IsRegistrationDone, value); }
+        }
+
+        
+        private static void onRegisterationDonePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if ((bool)e.NewValue == true)
+            {
+                (d as LogInVM).RegisterPopUpIsOpenProperty = false;
+                (d as LogInVM).IsRegistrationDoneProperty = false;
+            }
+        }
+        Boolean isConnected;
+        public Boolean IsConnectedProperty
+        {
+            get { return isConnected; }
+            set { isConnected = value; if (value == true) NotifyPropertyChanged("connected"); }
+        }
+        public void CheckLogInNow()
+        {
+            User user = LogInModel.GetUserInfo();
+            if (user != null)
+            {
+                IsConnectedProperty = true;
+                Id = user.UserId;
+                id = user.UserId;
+
+            }
+        }
+
+        public void GoTOProfile()
+        {
+            RegisterPopUpIsOpenProperty = true;
         }
     }
 }

@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Controls.DataVisualization.Charting;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -15,28 +14,19 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF.ViewModels;
 
-
-
 namespace WPF.UserControls
 {
     /// <summary>
-    /// Interaction logic for Graph.xaml
+    /// Interaction logic for ProfileDetailes.xaml
     /// </summary>
-    public partial class Graph : UserControl
+    public partial class ProfileDetails : UserControl
     {
-        public GraphVM GraphVM { get; set; }
-        
-
-        public Graph(string id)
+        public ProfileDetailsVM ProfileDetailsVM { get; set;}
+        public ProfileDetails(string id)
         {
             InitializeComponent();
-            GraphVM = new GraphVM(id);
-            this.DataContext = GraphVM;
-            //showColumnChart();
-            //LoadLineChartData();
+            ProfileDetailsVM = new ProfileDetailsVM(id);
+            this.DataContext = ProfileDetailsVM;
         }
-
- 
-        
     }
 }

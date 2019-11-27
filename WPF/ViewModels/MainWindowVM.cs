@@ -14,7 +14,7 @@ using System.Windows;
 
 namespace WPF.ViewModels
 {
-    public class MainWindowVM : INotifyPropertyChanged
+    public class MainWindowVM : DependencyObject, INotifyPropertyChanged
 
     {
 
@@ -37,17 +37,17 @@ namespace WPF.ViewModels
 
             }
         }
-        //private int id;
-        //public int Id
-        //{
-        //    get { return id; }
-        //    set
-        //    {
-        //        id = value;
-        //        if (IdPropertyChanged != null)
-        //            IdPropertyChanged(this, new PropertyChangedEventArgs("Id"));
-        //    }
-        //}
+
+
+
+
+
+        public static readonly DependencyProperty Id = DependencyProperty.Register("IdProperty", typeof(String), typeof(MainWindowVM));
+        public String IdProperty
+        {
+            get { return (String)GetValue(Id); }
+            set { SetValue(Id, value); }
+        }
 
         //private string name;
         //public string Name
@@ -59,13 +59,12 @@ namespace WPF.ViewModels
         //        if (NamePropertyChanged != null)
         //            NamePropertyChanged(this, new PropertyChangedEventArgs("Name"));
         //    }
-        //}
+        //}יכי5435א64564הה666666
         public MainWindowButtons MainWindowButtons { set; get; }
         public LogInCommand LogInCommand { set; get; }
         public GraphCommand GraphCommand { set; get; }
         public ProfileCommand ProfileCommand { set; get; }
         public EnterMealsCommand EnterMealsCommand { set; get; }
-        public GoToProfileCommand GoToProfileCommand { get; set; }
         public string[] Names { set; get; }//pural
         private MainModel Model { set; get; }
         MainWindow MainWindow { get; set; }
@@ -86,6 +85,7 @@ namespace WPF.ViewModels
             // MainWindow = new MainWindow();
             MainWindowButtons = new MainWindowButtons();
             //ChildUserControl = new LogIn();
+            initLogIn();
             LogInCommand = new LogInCommand();
             GraphCommand = new GraphCommand();
             EnterMealsCommand = new EnterMealsCommand();
@@ -100,7 +100,6 @@ namespace WPF.ViewModels
 
 
 
-            UserControl = new LogIn();
 
 
             // MainWindow.userbutton.IsEnabled = true;
@@ -137,6 +136,7 @@ namespace WPF.ViewModels
         //}
         internal void LogInCommand_ShowlogIn(object sender, EventArgs e)
         {
+            MainWindowButtons.Visibility = Visibility.Hidden;
             this.UserControl = new LogIn();
         }
         //internal void LogInCommand_ShowlogIn()
@@ -145,10 +145,23 @@ namespace WPF.ViewModels
         //}
         internal void GraphCommand_ShowGraph(object sender, EventArgs e)
         {
-            this.UserControl = new Graph();
+            this.UserControl = new Graph(IdProperty);
         }
-
-
+        private void initLogIn()
+        {
+            MainWindowButtons.Visibility = Visibility.Hidden;
+            UserControl = new LogIn();
+          
+            (UserControl as LogIn).LogInVM.PropertyChanged += isLogedInFunc;
+           
+        }
+        //when user loged in successfully
+        private void isLogedInFunc(object sender, PropertyChangedEventArgs e)
+        {
+            IdProperty = (sender as LogInVM).Id;
+            UserControl = new Graph(IdProperty);
+            MainWindowButtons.Visibility = Visibility.Visible;
+        }
 
         //internal void GraphCommand_ShowGraph()
         //{
@@ -168,20 +181,12 @@ namespace WPF.ViewModels
         {
         }
 
-        //internal void ProfileCommand_ShowProfile()
-        //{
-        //    this.UserControl = new Profile();
-        //}
-
+    
         internal void ProfileCommand_ShowProfile(object sender, EventArgs e)
         {
-            this.UserControl = new Profile();
+            this.UserControl = new ProfileDetails(IdProperty);
         }
 
-        internal void ProfileCommand_ShowNewProfile(object sender, EventArgs e)
-        {
-            this.UserControl = new Profile();
-        }
 
         //public void Operation(int i)
         //{

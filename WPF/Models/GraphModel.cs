@@ -14,10 +14,10 @@ namespace WPF.Models
         public FoodBL FoodBL { get; set;}
         public LogInModel LogInModel { get; set; }
         public string userId;
-        public GraphModel()
+        public GraphModel(string id)
         {
             FoodBL = new FoodBL();
-            //Id = id;
+            Id = id;
 
             //LogInModel = new LogInModel();
         }
@@ -36,26 +36,17 @@ namespace WPF.Models
         //    return FoodBL.getUserDataById(id);
         //}
         //public List<WeekComleteWeightInfo> get
-        public List<KeyValuePair<string, double>> GetLstWeeksInformation() {
+        public List<KeyValuePair<string, double>> GetLstWeeksInformation(string userId) {
 
             //string test = "205583610";
             //userId = LogInModel.Id;
-            var tempResult = FoodBL.getGraphData(Id);
+            var tempResult = FoodBL.getGraphData(userId);
             if (tempResult == null)
             {
                 MessageBox.Show("Id not exist!");
                 return null;
             }
             List<KeyValuePair<string, double>> result = new List<KeyValuePair<string, double>>();
-            //for(int i=0; i<8; i++)
-            //{
-            //  var item = tempResult.list[i];
-            //result.Add(new KeyValuePair<string, double>());
-            //}
-
-            //result = tempResult.Lstweights.FindAll(Predicate<WeekComleteWeightInfo;
-            //result.Add(item);
-            //result = null;
             result = tempResult;
             return result;
 

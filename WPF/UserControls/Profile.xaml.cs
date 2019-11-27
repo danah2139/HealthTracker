@@ -14,6 +14,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WPF.ViewModels;
 using BE;
+using System.ComponentModel;
+
 namespace WPF.UserControls
 {
     /// <summary>
@@ -21,18 +23,32 @@ namespace WPF.UserControls
     /// </summary>
     public partial class Profile : UserControl
     {
-        public ProfileVM ProfileVM { get; set;}
+        public ProfileVM ProfileVM;
         public Profile()
         {
             InitializeComponent();
             ProfileVM = new ProfileVM();
+            ProfileVM.PropertyChanged += viewModelPropertyChanged;
             this.DataContext = ProfileVM;
            
+        }
+
+        public static readonly DependencyProperty IsDone = DependencyProperty.Register("IsDoneProperty", typeof(Boolean), typeof(Profile));
+        public Boolean IsDoneProperty
+        {
+            get { return (Boolean)GetValue(IsDone); }
+            set { SetValue(IsDone, value); }
         }
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
+        }
+
+        private void viewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
+        {
+            if (e.PropertyName == "IsDone")
+                IsDoneProperty = true;
         }
 
 

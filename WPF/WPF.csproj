@@ -34,6 +34,12 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>images %281%29.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup />
+  <PropertyGroup />
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -91,11 +97,13 @@
     </ApplicationDefinition>
     <Compile Include="Commands\AddProfileCommand.cs" />
     <Compile Include="Commands\AddToGraphCommand.cs" />
+    <Compile Include="Commands\CancelProfileCommand.cs" />
     <Compile Include="Commands\CheckLogInCommand.cs" />
     <Compile Include="Commands\GoToProfileCommand.cs" />
     <Compile Include="Commands\LogInCommand.cs" />
     <Compile Include="Commands\UpdateProfileCommand.cs" />
     <Compile Include="Models\LogInModel.cs" />
+    <Compile Include="Models\ProfileDetailsModel.cs" />
     <Compile Include="UserControls\EnterMeals.xaml.cs">
       <DependentUpon>EnterMeals.xaml</DependentUpon>
     </Compile>
@@ -111,10 +119,14 @@
     <Compile Include="UserControls\Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ProfileDetails.xaml.cs">
+      <DependentUpon>ProfileDetails.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModels\EnterMealsVM.cs" />
     <Compile Include="ViewModels\GraphVM.cs" />
     <Compile Include="ViewModels\LogInVM.cs" />
     <Compile Include="ViewModels\MainWindowVM.cs" />
+    <Compile Include="ViewModels\ProfileDetailsVM.cs" />
     <Compile Include="ViewModels\ProfileVM.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -148,6 +160,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\Profile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ProfileDetails.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -208,6 +224,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\fitness-stuff-grey-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images %281%29.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

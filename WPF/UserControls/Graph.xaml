@@ -90,7 +90,7 @@
     </UserControl.Resources>
 
 
-    <Grid>
+    <Grid Name="DataGrid1">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
@@ -156,9 +156,7 @@
                 </ControlTemplate>
             </charting:Chart.Template>
         </charting:Chart>
-        <TextBox x:Name="idTextBox" Width=" 120" VerticalAlignment="Center" Text="{Binding GraphModel.Id, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" Margin="9.4,40,0,388" Height="22" HorizontalAlignment="Left" Grid.Column="1" RenderTransformOrigin="0.71,-7.973"/>
-        <RadioButton Content="Enter Id" Grid.Column="1" Command="{Binding AddGraph}" HorizontalAlignment="Left" Margin="5.4,91,0,0" VerticalAlignment="Top" Width="113" Height="26"/>
-
+        
 
 
     </Grid>
