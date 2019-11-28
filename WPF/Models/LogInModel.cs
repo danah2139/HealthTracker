@@ -16,10 +16,9 @@ namespace WPF.Models
         public LogInModel()
         {
             FoodBL = new FoodBL();
-            //GraphModel = new GraphModel();
 
         }
-        public User GetUserInfo()
+        public User GetUserInfo(string Id)
         {
             if (Id == "")
             {
@@ -37,18 +36,7 @@ namespace WPF.Models
 
         }
 
-        public string id;
-        public string Id
-        {
-            get { return id; }
-            set
-            {
-                if (id != value)
-                {
-                    id = value;
-                }
-            }
-        }
+
 
 
 

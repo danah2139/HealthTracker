@@ -2,7 +2,6 @@ C:\Users\dana\heathtracker\HealthTracker\BE\bin\Debug\BE.dll
 C:\Users\dana\heathtracker\HealthTracker\BE\bin\Debug\BE.pdb
 C:\Users\dana\heathtracker\HealthTracker\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.dll
 C:\Users\dana\heathtracker\HealthTracker\BE\bin\Debug\System.Windows.Controls.DataVisualization.Toolkit.xml
-C:\Users\dana\heathtracker\HealthTracker\BE\obj\Debug\BE.csprojAssemblyReference.cache
 C:\Users\dana\heathtracker\HealthTracker\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\dana\heathtracker\HealthTracker\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Users\dana\heathtracker\HealthTracker\BE\obj\Debug\BE.dll

@@ -22,23 +22,14 @@ namespace WPF.UserControls
     public partial class EnterMeals : UserControl
     {
         public EnterMealsVM EnterMealsVM { get; set; }
-        public EnterMeals()//changed inside ()
+        public EnterMeals()
         {
             InitializeComponent();
-            EnterMealsVM = new EnterMealsVM();//changed inside()
+            EnterMealsVM = new EnterMealsVM();
             this.DataContext = EnterMealsVM;
 
         }
 
-        private void Click_api_result(object sender, RoutedEventArgs e)
-        {
-            //i need to call that func(the api)
-            // getFoodDataByName();
-        }
-
-        //private void getFoodDataByName()
-        //{
-
-        //}
+        
     }
 }

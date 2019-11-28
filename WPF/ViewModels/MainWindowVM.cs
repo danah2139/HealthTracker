@@ -59,7 +59,6 @@ namespace WPF.ViewModels
         //        if (NamePropertyChanged != null)
         //            NamePropertyChanged(this, new PropertyChangedEventArgs("Name"));
         //    }
-        //}יכי5435א64564הה666666
         public MainWindowButtons MainWindowButtons { set; get; }
         public LogInCommand LogInCommand { set; get; }
         public GraphCommand GraphCommand { set; get; }
@@ -82,15 +81,12 @@ namespace WPF.ViewModels
             Model = new MainModel();
             //Name = "beer";
             //ID="888888"
-            // MainWindow = new MainWindow();
             MainWindowButtons = new MainWindowButtons();
-            //ChildUserControl = new LogIn();
             initLogIn();
             LogInCommand = new LogInCommand();
             GraphCommand = new GraphCommand();
             EnterMealsCommand = new EnterMealsCommand();
             ProfileCommand = new ProfileCommand();
-            //GoToProfileCommand = new GoToProfileCommand(this);
             LogInCommand.ShowLogIn += LogInCommand_ShowlogIn;
             ProfileCommand.ShowProfile += ProfileCommand_ShowProfile;
             EnterMealsCommand.ShowEnterMeals += MealCommand_ShowEnterMeals;
@@ -108,41 +104,13 @@ namespace WPF.ViewModels
             //NamePropertyChanged += MainWindowVM_NamePropertyChanged;
         }
 
-        //private void MainWindowVM_NamePropertyChanged(object sender, PropertyChangedEventArgs e)
-        //{
-        //    if (this.UserControl.GetType().Equals(typeof(LogIn)))
-        //    {
-        //        this.UserControl = new LogIn();
-        //    }
-
-        //    if (this.UserControl.GetType().Equals(typeof(Profile)))
-        //    {
-        //        this.UserControl = new UserControls.Profile();
-        //    }
-
-        //    if (this.UserControl.GetType().Equals(typeof(Graph)))
-        //    {
-        //        this.UserControl = new UserControls.Graph();
-        //    }
-
-        //    if (this.UserControl.GetType().Equals(typeof(EnterMeals)))
-        //    {
-        //        this.UserControl = new UserControls.EnterMeals();
-        //    }
-
-
-        //    //we need to add one for user/ profile user control
-
-        //}
+   
         internal void LogInCommand_ShowlogIn(object sender, EventArgs e)
         {
             MainWindowButtons.Visibility = Visibility.Hidden;
             this.UserControl = new LogIn();
         }
-        //internal void LogInCommand_ShowlogIn()
-        //{
-        //    this.UserControl = new LogIn();
-        //}
+
         internal void GraphCommand_ShowGraph(object sender, EventArgs e)
         {
             this.UserControl = new Graph(IdProperty);
@@ -159,19 +127,10 @@ namespace WPF.ViewModels
         private void isLogedInFunc(object sender, PropertyChangedEventArgs e)
         {
             IdProperty = (sender as LogInVM).Id;
-            UserControl = new Graph(IdProperty);
+            UserControl = new ProfileDetails(IdProperty);
             MainWindowButtons.Visibility = Visibility.Visible;
         }
 
-        //internal void GraphCommand_ShowGraph()
-        //{
-        //    this.UserControl = new Graph();
-        //}
-
-        //internal void MealCommand_ShowEnterMeals()
-        //{
-        //    this.UserControl = new EnterMeals();
-        //}
         internal void MealCommand_ShowEnterMeals(object sender, EventArgs e)
         {
             this.UserControl = new EnterMeals();

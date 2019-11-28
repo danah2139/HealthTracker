@@ -78,10 +78,7 @@ namespace DAL
             using (var db = new InfoFoodContext())
             {
                 var user = db.Users.FirstOrDefault(a => a.UserId == id);
-                //if (user == null)
-                //{
-                    //user = new User();
-                //}
+       
                 return user;
 
             }
@@ -91,7 +88,6 @@ namespace DAL
         {
             using (var db = new InfoFoodContext())
             {
-                //var user = db.Users.Find(1);
                 db.Users.Remove(user);
                 db.SaveChanges();
             }
@@ -102,10 +98,7 @@ namespace DAL
         {
             using (var db = new InfoFoodContext())
             {
-                // var result = db.WeekComleteWeightInfos.Where(a => lines);
-                //= from All .ToList();
-                //var result =
-                //db.WeekComleteWeightInfos.SqlQuery()
+             
                 List<KeyValuePair<string, double>> list = new List<KeyValuePair<string, double>>();
                 
                 var result = (from c in db.WeekComleteWeightInfos

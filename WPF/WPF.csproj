@@ -96,11 +96,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Commands\AddProfileCommand.cs" />
-    <Compile Include="Commands\AddToGraphCommand.cs" />
     <Compile Include="Commands\CancelProfileCommand.cs" />
     <Compile Include="Commands\CheckLogInCommand.cs" />
     <Compile Include="Commands\GoToProfileCommand.cs" />
     <Compile Include="Commands\LogInCommand.cs" />
+    <Compile Include="Commands\SearchFoodCommand.cs" />
     <Compile Include="Commands\UpdateProfileCommand.cs" />
     <Compile Include="Models\LogInModel.cs" />
     <Compile Include="Models\ProfileDetailsModel.cs" />
