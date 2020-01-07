@@ -29,13 +29,6 @@ namespace DAL
             public DbSet<WeekComleteWeightInfo> WeekComleteWeightInfos { get; set; }
         }
 
-        public FoodDAL()
-        {
-            //getFoodDataByName("beer");
-            
-        }
-
-        //public Void addWight()
         public void addUser(User user)
         {
             using (var db = new InfoFoodContext())
@@ -144,7 +137,7 @@ namespace DAL
                 string ndbno = foodObject.list.item[0].ndbno;
 
                 HttpWebRequest NdbWebReq = (HttpWebRequest)WebRequest.Create(string.Format(
-               "https://api.nal.usda.gov/ndb/V2/reports?ndbno=" + ndbno + "&type=b&format=JSON&api_key=W1IAZNHJlfPsg9FL1j1POAqUajeu50fjcicm8skg"));
+               "https://api.nal.usda.gov/ndb/V2/reports?ndbno=" + ndbno + "&type=f&format=JSON&api_key=W1IAZNHJlfPsg9FL1j1POAqUajeu50fjcicm8skg"));
 
                 NdbWebReq.Method = "GET";
 
@@ -167,36 +160,6 @@ namespace DAL
             }
             catch (WebException e)
             {
-                //using (var db = new InfoFoodContext())
-                //{
-                //    var result =
-                //        (from curr in db.ReportFoodData
-                //         where curr.foods[0].food.desc.name.Equals(name)
-                //         //lehashlim
-                //         select new TempData
-                //         {
-                //             _root = curr,
-                //             //_food = curr.foods[0].food.desc.ndbno,
-
-
-                //         }).FirstOrDefault();
-
-                //    ReportObject.RootObject rootObject = result._root;
-                /*
-                 rootObject.report = result._report;
-                 var _food = (from curr in db.ReportFoodData
-                                 where curr.key_id.Equals(city)
-                                 //take care of the key
-                                 select (
-                                 from i in curr.list
-                                 select i.weather
-                                 )).FirstOrDefault();
-                 rootObject.list[0].weather = _weather.ElementAt(0);
-                 */
-                //return rootObject;
-
-
-                // }
                 System.Console.WriteLine(e);
                 return null;
             }
