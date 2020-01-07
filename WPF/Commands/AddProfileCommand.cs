@@ -23,7 +23,7 @@ namespace WPF.Commands
 
         public void Execute(object parameter)
         {
-            CurrentVM.AddNewProfile();
+            CurrentVM.addNewProfile();
         }
     }
 }

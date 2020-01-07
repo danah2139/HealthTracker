@@ -18,6 +18,7 @@ namespace WPF.ViewModels
        string Name;
        EnterMealsModel EnterMealsModel { get; set; }
        EnterMeals EnterMeals { get; set; }
+       List<int>Fats { get; set; }
        public EnterMealsVM()
        {
             EnterMealsModel = new EnterMealsModel();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using BE;
 using Newtonsoft.Json;
 
@@ -41,7 +42,7 @@ namespace DAL
             {
                 if (getUser(user.UserId) != null)
                 {
-                    updateUser(user);
+                    MessageBox.Show("user already exists");
                     return;
                 }
                 db.Users.Add(user); // adds the user to the DbSet in memory
@@ -64,12 +65,13 @@ namespace DAL
                 db.Users.Find(updaeUser.Id).Name = user.Name;
                 db.Users.Find(updaeUser.Id).DateOfBirth = user.DateOfBirth;
                 db.Users.Find(updaeUser.Id).DateOfWeight = user.DateOfWeight;
+                db.Users.Find(updaeUser.Id)._gender = user._gender;
+                db.Users.Find(updaeUser.Id)._mood = user._mood;
+                db.Users.Find(updaeUser.Id)._familyStatus = user._familyStatus;
+                db.Users.Find(updaeUser.Id)._activity = user._activity;
+
                 db.SaveChanges();
                 
-                //db.weekComleteWeightInfos.Add()
-
-
-                //check later
             }
         }
 

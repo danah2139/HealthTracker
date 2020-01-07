@@ -24,16 +24,13 @@ namespace WPF.UserControls
     public partial class LogIn : UserControl
     {
         public LogInVM LogInVM { get; set; }
-        //public ProfileCommand ProfileCommand { get; set; }
-        //MainWindowVM MainWindowVM { get; set; }
 
 
         public LogIn()
         {
             InitializeComponent();
             LogInVM = new LogInVM();
-            //ProfileCommand = new ProfileCommand();
-            this.DataContext = LogInVM;
+            myGrid.DataContext = LogInVM;
 
         }
     }

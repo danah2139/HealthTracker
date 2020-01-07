@@ -72,13 +72,13 @@
             </Ellipse>
 
             <Label Content="Hello Guest!" HorizontalAlignment="Left" Margin="160,204,0,0" VerticalAlignment="Top" Height="41" Width="166" FontFamily="Segoe WP Semibold" FontSize="22"/>
-            <RadioButton Content="Sign In" Command ="{Binding CheckLogInCommand}" HorizontalAlignment="Left" Margin="119,270,0,0" VerticalAlignment="Top" FontSize="17" RenderTransformOrigin="-1.812,1"/>
-            <extToolkit:WatermarkTextBox Watermark="Enter Your Id" Text="{Binding LogInModel.Id}" HorizontalAlignment="Left" Height="25" Margin="214,272,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" />
+            <RadioButton Content="Sign In" Command ="{Binding CheckLogInCommand}" HorizontalAlignment="Left" Margin="364,274,0,0" VerticalAlignment="Top" FontSize="17" RenderTransformOrigin="-1.812,1"/>
+            <extToolkit:WatermarkTextBox Watermark="Enter Your Id" Text="{Binding Id}" HorizontalAlignment="Left" Height="25" Margin="181,274,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="145" />
             <RadioButton Content="Sign Up" Command="{Binding GoToProfileCommand}" CommandParameter="{Binding}" HorizontalAlignment="Left" Margin="201,333,0,0" VerticalAlignment="Top" Height="32" FontSize="18"/>
         </Grid>
-        <Popup Visibility="Visible" Placement="MousePoint" HorizontalAlignment="Center" IsOpen="{Binding RegisterPopUpIsOpenProperty}" Height="600" Width="600"  >
+        <Popup Visibility="Visible" Placement="MousePoint" HorizontalAlignment="Center" IsOpen="{Binding RegisterPopUpIsOpenProperty}" Height="600" Width="600" AllowDrop="True"  >
             <Border BorderBrush="Gray" BorderThickness="1">
-                <local:Profile IsDoneProperty="{Binding IsRegistrationDoneProperty, Mode=OneWayToSource}" Margin="-0.8,-0.8,-1.2,-1.2" VerticalAlignment="Top" Height="600">
+                <local:Profile IsDoneProperty="{Binding IsRegistrationDoneProperty, Mode=OneWayToSource}" Margin="-0.8,-0.8,-1.2,-1.2">
                     <local:Profile.Background>
                         <ImageBrush ImageSource="/WPF;component/images/fitness-stuff-grey-background.jpg"/>
                     </local:Profile.Background>

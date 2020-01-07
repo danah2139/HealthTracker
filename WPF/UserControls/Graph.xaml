@@ -95,7 +95,11 @@
             <ColumnDefinition/>
             <ColumnDefinition Width="160"/>
         </Grid.ColumnDefinitions>
-        <charting:Chart Name="tempChart" DataContext="{Binding WeeksWeightInfo}"  Foreground="WhiteSmoke" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
+        <DockPanel Background="#FFB5B5A4" Margin="0,0,9.6,370">
+            <Label HorizontalContentAlignment="Center" Content="Weight Info" FontSize="26px" Margin="0,0,0,10" Width="507" Focusable="True" Foreground="Blue"></Label>
+            <Image Source="/WPF;component/images (1).ico" Margin="0,0,0,-0.2" Width="140" HorizontalAlignment="Left"/>
+        </DockPanel>
+        <charting:Chart Name="tempChart" DataContext="{Binding WeeksWeightInfo}"  Foreground="Blue" Grid.Row="1" Background="Transparent" BorderBrush="Transparent" BorderThickness="0">
             <charting:Chart.Axes>
                 <charting:LinearAxis Orientation="Y" ShowGridLines="False" Maximum="160" Minimum="0"/>
                 <charting:CategoryAxis Orientation="X" MajorTickMarkStyle="{StaticResource PerformanceChartMajorTickMarkStyle}"/>
@@ -115,7 +119,7 @@
             </charting:Chart.PlotAreaStyle>
             <charting:Chart.Series>
                 <charting:LineSeries Background="Transparent" IndependentValueBinding="{Binding Path=Key}"
-                                     DependentValueBinding="{Binding Path=Value}" ItemsSource="{Binding}" FontWeight="Bold" Foreground="White">
+                                     DependentValueBinding="{Binding Path=Value}" ItemsSource="{Binding}" FontWeight="Bold" Foreground="Blue">
                     <charting:LineSeries.DataPointStyle>
                         <Style TargetType="{x:Type charting:LineDataPoint}">
                             <Setter Property="Background" Value="Black"/>
@@ -156,7 +160,8 @@
                 </ControlTemplate>
             </charting:Chart.Template>
         </charting:Chart>
-        
+        <DockPanel HorizontalAlignment="Left" Height="100" LastChildFill="False" Margin="309,40,0,0" VerticalAlignment="Top" Width="100"/>
+
 
 
     </Grid>

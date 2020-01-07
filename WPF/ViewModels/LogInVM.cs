@@ -19,16 +19,12 @@ namespace WPF.ViewModels
         public LogInModel LogInModel { get; set; }
         public GoToProfileCommand GoToProfileCommand { get; set; }
         public ICommand CheckLogInCommand { get; set; }
-        public MainWindowVM MainWindowVM { get; set; }
-        public ProfileCommand ProfileCommand { get; set; }
-        // public ObservableCollection<User> Users { get; set; }
+
         public LogInVM()
         {
             LogInModel = new LogInModel();
             CheckLogInCommand = new CheckLogInCommand(this);
             GoToProfileCommand = new GoToProfileCommand();
-     //       ProfileCommand = new ProfileCommand();
-            //Users = new ObservableCollection<User>();
 
         }
         public string id;
@@ -84,17 +80,15 @@ namespace WPF.ViewModels
         }
         public void CheckLogInNow()
         {
-            User user = LogInModel.GetUserInfo();
+            User user = LogInModel.getUserInfo(Id);
             if (user != null)
             {
                 IsConnectedProperty = true;
-                Id = user.UserId;
-                id = user.UserId;
-
+   
             }
         }
 
-        public void GoTOProfile()
+        public void goToProfile()
         {
             RegisterPopUpIsOpenProperty = true;
         }

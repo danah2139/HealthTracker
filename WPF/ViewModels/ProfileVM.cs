@@ -19,16 +19,12 @@ namespace WPF.ViewModels
         public Profile Profile { get; set; }
         public ProfileModel ProfileModel { get; set; }
         public ICommand AddProfile { get; set; }
-        public ICommand UpdateProfileCommand { get; set; }
         public ICommand CancelProfileCommand { get; set; }
 
-        // public ObservableCollection<User> Users { get; set; }
         public ProfileVM()
         {
             ProfileModel = new ProfileModel();
             AddProfile = new AddProfileCommand(this);
-            //Users = new ObservableCollection<User>();
-            UpdateProfileCommand = new UpdateProfileCommand(this);
             CancelProfileCommand = new CancelProfileCommand();
 
         }
@@ -40,6 +36,7 @@ namespace WPF.ViewModels
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
+    
         private Boolean isDone;//true when user was registered successfully or when user click on cancel button.
         public Boolean IsDoneProperty
         {
@@ -52,14 +49,13 @@ namespace WPF.ViewModels
             }
         }
 
-        internal void AddNewProfile()
+        internal void addNewProfile()
         {
-            ProfileModel.AddUser();
+            ProfileModel.addUser();
+            this.IsDoneProperty = true;
+
         }
-        internal void UpdateNewProfile()
-        {
-            ProfileModel.UpdateUser();
-        }
+
         public void close()
         {
             this.IsDoneProperty = true;

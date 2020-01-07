@@ -21,30 +21,22 @@ namespace WPF.Models
         }
 
         public List<WeekComleteWeightInfo> LstWights { get; set; }
-        public User GetUserInfo()
+        public User getUserInfo()
         {
 
             return FoodBL.getUserDataById(Id);
 
         }
-        public void AddUser()
+        public void addUser()
         {
 
-            BE.User user = new User(Name,ID ,Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender,Mood, FamilyStatus, Activity, LstWights);
-            
+            User user = new User(Name,ID ,Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender,Mood, FamilyStatus, Activity, LstWights);
+            Console.WriteLine(user._gender);
 
             FoodBL.addUser(user);
             MessageBox.Show("Id add Successfully");
         }
-        public void UpdateUser()
-        {
-
-            BE.User user = new User(Name, ID, Id, GoalWeight, Height, Weight, DateOfWeight, DateOfBirth, Gender, Mood, FamilyStatus, Activity, LstWights);
-
-
-            FoodBL.UpdateUser(user);
-            MessageBox.Show("Id update Successfully");
-        }
+   
         public event PropertyChangedEventHandler GenderChanged;
         public event PropertyChangedEventHandler MoodChanged;
         public event PropertyChangedEventHandler FamilyStatusChanged;
@@ -97,7 +89,7 @@ namespace WPF.Models
         public Gender Gender
         {
              get         {return gender; }
-             set {gender = value; OnPropertyChanged(); }
+             set {gender = value; OnPropertyChanged("Gender"); }
            // get; set;
         }
 

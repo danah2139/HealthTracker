@@ -27,7 +27,7 @@ namespace BL
             dal.addUser(user);
         }
 
-        public void UpdateUser(User user)
+        public void updateUser(User user)
         {
             dal.updateUser(user);
         }

@@ -24,21 +24,22 @@ namespace WPF.UserControls
     public partial class Profile : UserControl
     {
         public ProfileVM ProfileVM;
-        public Profile()
-        {
-            InitializeComponent();
-            ProfileVM = new ProfileVM();
-            ProfileVM.PropertyChanged += viewModelPropertyChanged;
-            this.DataContext = ProfileVM;
-           
-        }
-
-        public static readonly DependencyProperty IsDone = DependencyProperty.Register("IsDoneProperty", typeof(Boolean), typeof(Profile));
+        public static readonly DependencyProperty IsDone = DependencyProperty.Register("IsDoneProperty",typeof(Boolean),typeof(Profile));
         public Boolean IsDoneProperty
         {
             get { return (Boolean)GetValue(IsDone); }
             set { SetValue(IsDone, value); }
         }
+        public Profile()
+        {
+            InitializeComponent();
+            ProfileVM = new ProfileVM();
+            ProfileVM.PropertyChanged += viewModelPropertyChanged;
+            myGrid.DataContext = ProfileVM;
+           
+        }
+
+
 
         private void TabControl_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -48,21 +49,10 @@ namespace WPF.UserControls
         private void viewModelPropertyChanged(object sender, PropertyChangedEventArgs e)
         {
             if (e.PropertyName == "IsDone")
-                IsDoneProperty = true;
+            { IsDoneProperty = true; }
         }
 
 
 
-        //private void Add_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ProfileVM.Users.Add(new User { Name = this.nameTextBox.Text,
-        //        ID = Int32.Parse(this.idTextBox.Text), GoalWeight = Int32.Parse(this.goalWeightTextBox.Text),
-        //        Height = Int32.Parse(this.heightTextBox.Text),
-        //        Weight = Convert.ToDouble(this.weightTextBox.Text),
-        //        DateOfWeight = this.dateOfWeightTextBox.Text,
-        //        DateOfBirth = Convert.ToDateTime(this.birthDayDatePicker.Text),
-        //        Gender = Enum.(this.genderPersonComboBox.SelectedItem);
-        //    });
-        //}
     }
 }

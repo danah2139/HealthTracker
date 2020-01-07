@@ -11,8 +11,8 @@ namespace WPF.Commands
     public class UpdateProfileCommand : ICommand
     {
         public event EventHandler CanExecuteChanged;
-        public ProfileVM CurrentVM { get; set; }
-        public UpdateProfileCommand(ProfileVM currentVM)
+        public ProfileDetailsVM CurrentVM { get; set; }
+        public UpdateProfileCommand(ProfileDetailsVM currentVM)
         {
             this.CurrentVM = currentVM;
         }
@@ -23,7 +23,7 @@ namespace WPF.Commands
 
         public void Execute(object parameter)
         {
-            CurrentVM.UpdateNewProfile();
+            CurrentVM.updateNewProfile();
         }
     }
 }

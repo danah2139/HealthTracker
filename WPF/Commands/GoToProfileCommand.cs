@@ -24,7 +24,7 @@ namespace WPF.Commands
         public void Execute(object parameter)
         {
           
-            ((LogInVM)parameter).GoTOProfile();
+            ((LogInVM)parameter).goToProfile();
         }
     }
 }

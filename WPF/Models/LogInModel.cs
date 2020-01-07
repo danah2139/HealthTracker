@@ -18,7 +18,7 @@ namespace WPF.Models
             FoodBL = new FoodBL();
 
         }
-        public User GetUserInfo(string Id)
+        public User getUserInfo(string Id)
         {
             if (Id == "")
             {

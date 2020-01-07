@@ -17,14 +17,14 @@ namespace BE
         public double Weight { get; set; }
         public string DateOfWeight { get; set; }
         //public DateTime DateOfBirth2 { get; set; }
-        public Gender Gender { get; set; }
-        public Mood Mood { get; set; }
-        public FamilyStatus FamilyStatus { get; set; }
-        public Activity Activity { get; set; }
-        public Gender _gender;
-        private Mood _mood;
-        private FamilyStatus _familyStatus;
-        private Activity _activity;
+        //public Gender Gender { get; set; }
+        //public Mood Mood { get; set; }
+        //public FamilyStatus FamilyStatus { get; set; }
+        //public Activity Activity { get; set; }
+        public Gender _gender { get; set; }
+        public Mood _mood { get; set; }
+        public FamilyStatus _familyStatus { get; set; }
+        public Activity _activity { get; set; }
         public string DateOfBirth { get; set; }
         //public Dictionary<string, double> Lstweights { get; set; }
         public List<WeekComleteWeightInfo> Lstweights { get; set; }

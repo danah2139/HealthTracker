@@ -20,7 +20,6 @@ namespace WPF.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
         public event PropertyChangedEventHandler NamePropertyChanged;
-        //public event PropertyChangedEventHandler IdPropertyChanged;
         private UserControl userControl;
         public UserControl UserControl
         {
@@ -38,10 +37,6 @@ namespace WPF.ViewModels
             }
         }
 
-
-
-
-
         public static readonly DependencyProperty Id = DependencyProperty.Register("IdProperty", typeof(String), typeof(MainWindowVM));
         public String IdProperty
         {
@@ -49,16 +44,6 @@ namespace WPF.ViewModels
             set { SetValue(Id, value); }
         }
 
-        //private string name;
-        //public string Name
-        //{
-        //    get { return name; }
-        //    set
-        //    {
-        //        name = value;
-        //        if (NamePropertyChanged != null)
-        //            NamePropertyChanged(this, new PropertyChangedEventArgs("Name"));
-        //    }
         public MainWindowButtons MainWindowButtons { set; get; }
         public LogInCommand LogInCommand { set; get; }
         public GraphCommand GraphCommand { set; get; }
@@ -67,20 +52,10 @@ namespace WPF.ViewModels
         public string[] Names { set; get; }//pural
         private MainModel Model { set; get; }
         MainWindow MainWindow { get; set; }
-        //public UserControl ChildUserControl
-        //{
-        //    get { return (UserControl)GetValue(ChildUserControlProperty); }
-        //    set { SetValue(ChildUserControlProperty, value); }
-        //}
-        //// Using a DependencyProperty as the backing store for ChildViewModel.  This enables animation, styling, binding, etc...
-        //public static readonly DependencyProperty ChildUserControlProperty =
-        //    DependencyProperty.Register("ChildUserControl", typeof(UserControl), typeof(MainWindowVM));
 
         public MainWindowVM()
         {
             Model = new MainModel();
-            //Name = "beer";
-            //ID="888888"
             MainWindowButtons = new MainWindowButtons();
             initLogIn();
             LogInCommand = new LogInCommand();
@@ -91,17 +66,7 @@ namespace WPF.ViewModels
             ProfileCommand.ShowProfile += ProfileCommand_ShowProfile;
             EnterMealsCommand.ShowEnterMeals += MealCommand_ShowEnterMeals;
             GraphCommand.ShowGraph += GraphCommand_ShowGraph;
-            //GoToProfileCommand.ShowNewProfile += ProfileCommand_ShowNewProfile;
-            //MainWindowButtons.ProfileButton.IsChecked = true;
 
-
-
-
-
-            // MainWindow.userbutton.IsEnabled = true;
-            //MainWindowButtons.profileButton.IsChecked = true;
-
-            //NamePropertyChanged += MainWindowVM_NamePropertyChanged;
         }
 
    
@@ -109,6 +74,8 @@ namespace WPF.ViewModels
         {
             MainWindowButtons.Visibility = Visibility.Hidden;
             this.UserControl = new LogIn();
+            (UserControl as LogIn).LogInVM.PropertyChanged += isLogedInFunc;
+
         }
 
         internal void GraphCommand_ShowGraph(object sender, EventArgs e)
@@ -147,28 +114,7 @@ namespace WPF.ViewModels
         }
 
 
-        //public void Operation(int i)
-        //{
-        //    switch (i)
-        //    {
-        //        case 1:
-        //            ChildUserControl = new LogIn();
-        //            break;
-        //        case 2:
-        //            ChildUserControl = new Profile();
-        //            break;
-        //        case 3:
-        //            ChildUserControl = new EnterMeals();
-        //            break;
-
-        //        case 4:
-        //            ChildUserControl = new Graph();
-        //            break;
-        //case 5:
-        //    System.Windows.Application.Current.Shutdown();
-        //    break;
-        //}
-        //}
+        
     }
 }
 
